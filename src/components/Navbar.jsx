@@ -17,8 +17,10 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]">
-      <div className="bg-white rounded-3xl px-6 lg:px-5 py-6 flex justify-between items-center max-w-[1440px] mx-auto">
+    // my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]
+    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ "paddingInline": "2rem" }}>
+    {/* max-w-[1440px] - removed */}
+      <div className="bg-white rounded-3xl px-6 lg:px-5 py-6 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
         <div className="flex items-center text-3xl text-purple-600">
           <img className="w-9 h-9" src={icon} alt="alitas" />
           alitas
@@ -30,7 +32,7 @@ const Navbar = () => {
               key={href}
               href={href}
               onClick={() => setActiveTab(href)}
-              className="hover:text-gray-400 relative transition-colors duration-300" 
+              className="hover:text-gray-400 relative transition-colors duration-300"
             >
               {label}
               {activeTab === href && (
@@ -76,7 +78,7 @@ const Navbar = () => {
           </button>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
