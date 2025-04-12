@@ -18,15 +18,15 @@ const Navbar = () => {
 
   return (
     // my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]
-    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ "paddingInline": "2rem" }}>
+    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ "paddingInline": "0.02rem" }}>
     {/* max-w-[1440px] - removed */}
-      <div className="bg-white rounded-3xl px-6 lg:px-5 py-6 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
+      <div className="bg-white rounded-3xl px-6 lg:px-5 py-4 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
         <div className="flex items-center text-3xl text-purple-600">
-          <img className="w-9 h-9" src={icon} alt="alitas" />
+          <img className="w-10 h-10" src={icon} alt="alitas" />
           alitas
         </div>
 
-        <div className="hidden md:flex space-x-10 items-center text-lg">
+        <div className="hidden md:flex space-x-20 items-center text-lg">
           {navLinks.map(({ label, href }) => (
             <a
               key={href}
@@ -36,7 +36,7 @@ const Navbar = () => {
             >
               {label}
               {activeTab === href && (
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-purple-500"></span>
+                <span className="absolute top-12 left-0 w-full h-1 bg-[#6E2ECD] rounded-full"></span>
               )}
             </a>
           ))}

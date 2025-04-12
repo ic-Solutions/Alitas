@@ -49,7 +49,7 @@ const Faqs = () => {
             key={index}
             className={`rounded-lg mb-4 ${
               item.answer ? " text-black text-lg" : "bg-white text-black"
-            } hover:bg-purple-600 hover:text-white`}
+            } hover:bg-[#783CCF] hover:text-white`}
           >
             <div
               className="flex justify-between items-center p-4 cursor-pointer"

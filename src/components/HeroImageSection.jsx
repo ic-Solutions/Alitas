@@ -11,22 +11,22 @@ const HeroImageSection = () => {
       style={{ top: "30rem", width: "calc(100vw - 21rem)" }}
     >
       <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center max-w-7xl mx-auto">
-        {/* Floating Left Cards */}
-        <div className="flex flex-col gap-4 z-20 lg:absolute lg:left-12 lg:top-1/2 lg:-translate-y-1/2">
-          <img
-            src={upcmoing}
-            alt="Upcoming"
-            className="w-full max-w-[320px] md:max-w-[360px] lg:w-[400px] drop-shadow-2xl rounded-3xl"
-          />
-          <img
-            src={quickAccess}
-            alt="Quick Access"
-            className="w-full max-w-[320px] md:max-w-[360px] lg:w-[400px] drop-shadow-2xl rounded-3xl"
-          />
-        </div>
+        {/* Upcoming - Top Left */}
+        <img
+          src={upcmoing}
+          alt="Upcoming"
+          className="hidden lg:block absolute left-10 top-[-20%] w-[480px] h-[400px] drop-shadow-2xl rounded-3xl object-contain z-20"
+        />
+
+        {/* Quick Access - Bottom Left */}
+        <img
+          src={quickAccess}
+          alt="Quick Access"
+          className="hidden lg:block absolute left-16 top-[45%] w-[480px] h-[320px] drop-shadow-2xl rounded-3xl object-contain z-20"
+        />
 
         {/* Main Video Section */}
-        <div className="relative bg-white rounded-[40px] overflow-hidden shadow-2xl w-full max-w-[700px] aspect-video z-10">
+        <div className="relative bg-white rounded-[40px] overflow-hidden shadow-2xl w-full max-w-[800px] aspect-video z-10">
           <button className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#262626] flex items-center justify-center border-t-2 border-purple-500 shadow-md">
             <svg
               viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ const HeroImageSection = () => {
           </button>
         </div>
 
-        {/* Floating Right Language Select */}
+        {/* Language - Right Side Centered */}
         <div className="hidden lg:flex justify-center z-20 mt-4 lg:mt-0 lg:absolute lg:right-12 lg:top-1/2 lg:-translate-y-1/2">
           <img
             src={language}

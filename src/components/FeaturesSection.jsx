@@ -14,7 +14,7 @@ import chinese from "../assets/3_.png";
 
 const FeaturesSection = () => {
   return (
-    <section id="featuresSection" className="mt-80 flex flex-col justify-center items-center gap-20 md:gap-40 mx-20 sm:px-5 lg:px-32 font-[SF-Pro-Display]">
+    <section id="featuresSection" className="my-100 flex flex-col justify-center items-center gap-20 md:gap-40 mx-20 sm:px-5 lg:px-32 font-[SF-Pro-Display]">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-30">
         <div className="lg:w-1/2">
           <p className="text-[#4908C6] text-sm uppercase mb-2">

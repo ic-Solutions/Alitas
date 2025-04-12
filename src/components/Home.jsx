@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 import dImage from "../assets/doc.png";
 import deviceImage from "../assets/devices.png";
-import upcmoing from "../assets/upcoming.png";
+import upcmoing from "../assets/rtrt.png";
 import choose from "../assets/choose.svg";
 import maxSample from "../assets/max_sample.png";
 import tab from "../assets/rfrfr.png";
@@ -28,12 +28,12 @@ const Home = () => {
 
   return (
     <>
-      <div className="py-10 relative">
+      <div className="py-12 relative">
         <div className="mx-4 sm:mx-10 md:mx-20 lg:mx-40">
           <HeroImageSection />
           {/* relative w-full min-h-screen bg-[#EFE7FD] pb-20 overflow-hidden rounded-3xl */}
           <div
-            className="relative bg-[#EFE7FD] pb-20 overflow-hidden rounded-3xl"
+            className="relative bg-[#F2EBFE] mx-auto px-12 overflow-hidden rounded-3xl"
             style={{ height: "calc(100vh - 300px)" }}
           >
             <Navbar />
@@ -178,7 +178,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row justify-between items-center my-20 gap-12">
-              <div className="w-full mx-20 lg:w-1/2">
+              <div className="w-full mx-10 lg:w-1/2">
                 <img
                   src={dImage}
                   alt="Industry Example"
