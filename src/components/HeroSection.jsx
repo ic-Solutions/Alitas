@@ -10,14 +10,14 @@ import mobileFeatures from "../assets/mobile features.png"
 function HeroSection() {
   return (
     <div style={{ backgroundImage: `url(${HeroBackground})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", paddingBottom: "100px" }}>
-      <div className="bg-(--color-secondary) lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl" style={{ paddingBottom: "calc(100vh - 540px)" }}>
+      <div className="bg-(--color-secondary) lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl lg:pb-[13%] pb-[50%]">
         <Navbar />
-        <div className="lg:mx-75 mx-1 text-center lg:pt-10 pt-5">
+        <div className="lg:mx-[15%] mx-1 text-center lg:pt-10 pt-5">
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl/22 font-[700] font-[SF Pro Display] leading-tight text-[#1F1F1F] mb-6">
             Break Language Barriers in Healthcare with
             <span className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</span>
           </h1>
-          <p className="lg:text-lg text-sm/6">
+          <p className="lg:text-lg text-sm/6 lg:max-w-[80%] lg:mx-auto">
             Alitas AI provides real-time, accurate, and secure language translation for hospitals. Enhance communication between doctors and patients
             effortlessly.
           </p>

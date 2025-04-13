@@ -24,13 +24,13 @@ const Footer = () => {
             <img className="w-10 h-10 mr-2" src={icon} alt="alitas" /> alitas
           </div>
           <p className="mt-6 font-semibold text-base leading-relaxed">Subscribe to our newsletter for the latest updates on features and releases.</p>
-          <div className="flex flex-row items-start sm:items-center mt-6 gap-4">
+          <div className="flex flex-row items-start mt-6 lg:gap-4 gap-2 w-full">
             <input
               type="email"
-              placeholder="Enter your email address"
-              className="border border-purple-600 rounded-full px-6 py-3 lg:w-full sm:w-2/3 focus:outline-none flex-3/4"
+              placeholder="Email address"
+              className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none flex-grow"
             />
-            <button className="text-(--color-primary) border border-(--color-primary) px-6 py-3 rounded-full lg:w-full sm:w-auto font-semibold flex-1/4">
+            <button className="text-(--color-primary) border border-(--color-primary) lg:px-4 p-2 rounded-full font-semibold flex-none hover:text-white hover:bg-(--color-primary) hover:cursor-pointer">
               Subscribe
             </button>
           </div>
@@ -95,10 +95,12 @@ const Footer = () => {
         <div className="flex justify-between py-2">
           <a href="#" className="text-(--color-primary)">
             Terms of use
-          </a> |
+          </a>{" "}
+          |
           <a href="#" className="text-(--color-primary)">
             Privacy Policy
-          </a> |
+          </a>{" "}
+          |
           <a href="#" className="text-(--color-primary)">
             Policies
           </a>
@@ -125,7 +127,7 @@ const Footer = () => {
 
         {/* Social Icons + Language Selector */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <div className="flex justify-center space-x-3 text-lg text-white">
+          <div className="flex justify-center space-x-2 text-lg text-white">
             {icons.map(({ icon, href }, idx) => (
               <a
                 key={idx}

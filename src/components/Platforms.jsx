@@ -5,7 +5,7 @@ import phones from "../assets/phones.png";
 
 function Platforms() {
   return (
-    <div className="py-40 bg-white">
+    <div className="lg:py-40 py-20 bg-white">
       <div className="mx-auto flex flex-col md:flex-row items-center">
         <div className="relative w-full md:w-1/2 flex justify-center align-center">
           <div className="relative bg-white rounded-3xl z-10">

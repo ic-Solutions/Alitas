@@ -48,17 +48,23 @@ const Faqs = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className={`rounded-lg mb-4 border-1 border-gray-200 shadow-sm ${item.answer ? " text-black text-lg" : "bg-white text-black"} hover:bg-(--color-primary) hover:text-white ${activeIndex === index ? "bg-(--color-primary) text-white" : ""}`}
+            className={`rounded-lg mb-4 border-1 border-gray-200 shadow-sm transition-all duration-300 ${
+              item.answer ? "text-black text-lg" : "bg-white text-black"
+            } hover:bg-(--color-primary) hover:text-white ${activeIndex === index ? "bg-(--color-primary) text-white" : ""}`}
           >
             <div className="flex justify-between items-center p-4 cursor-pointer" onClick={() => toggleAccordion(index)}>
               <h3 className="text-base sm:text-lg">{item.question}</h3>
-              <span className={`text-xl sm:text-2xltransition-all duration-300${activeIndex === index ? "transform rotate-45" : ""}`}><IconPlus/></span>
+              <span className={`text-xl sm:text-2xl transition-transform duration-300 ${activeIndex === index ? "transform rotate-45" : ""}`}>
+                <IconPlus />
+              </span>
             </div>
-            {activeIndex === index && item.answer && (
-              <div className={`p-4 text-sm sm:text-base transform transition-all duration-300 ${activeIndex === index ? "opacity-100" : "opacity-0"}`}>
-                <p>{item.answer}</p>
-              </div>
-            )}
+            <div
+              className={`px-4 text-sm sm:text-base overflow-hidden transition-all duration-300 ${
+                activeIndex === index ? "max-h-[100%] opacity-100 mt-1 pb-4" : "max-h-0 opacity-0 mt-0 pb-0"
+              }`}
+            >
+              <p>{item.answer}</p>
+            </div>
           </div>
         ))}
       </div>

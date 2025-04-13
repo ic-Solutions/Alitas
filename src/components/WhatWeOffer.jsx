@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import offerings from "../assets/Offerings.png";
+import offerings from "../assets/what-we-offer.png";
 import { IconChevronDown } from "@tabler/icons-react";
 
 function WhatWeOffer() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -19,9 +19,11 @@ function WhatWeOffer() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-start my-1 gap-14">
+      <div className="flex flex-col md:flex-row justify-between items-center my-1 gap-14">
+        {" "}
+        {/* Changed items-center to items-start */}
         {/* Accordion Section */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full lg:w-[45%] transition-all">
           {[
             `Overcoming Language Barriers in Healthcare`,
             "Overcoming Language Barriers",
@@ -33,25 +35,33 @@ function WhatWeOffer() {
             return (
               <div
                 key={index}
-                className={`transition-all lg:p-10 lg:pt-10 p-3 duration-300 border-b border-gray-300 ${
-                  isActive ? "bg-[#F5F3FF] h-[100%] border-b-0" : "h-[100%] border-b-1"
-                }`}
+                className={`transition-all lg:p-10 lg:pt-10 p-3 duration-300 border-b border-gray-300 ${isActive ? "bg-[#F5F3FF] border-b-0" : ""}`}
               >
-                <h3 className="lg:text-xl text-lg font-semibold flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(index)}>
+                <h3
+                  className="lg:text-xl text-lg font-semibold flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleAccordion(index)}
+                >
                   {title}
                   <IconChevronDown className={`h-6 w-6 text-gray-600 transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
                 </h3>
-                <p className={`lg:text-lg text-sm text-gray-600 mt-4 leading-relaxed transition-all duration-300 ${isActive ? "h-[100%] opacity-100" : "h-0 opacity-0"}`}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
-                </p>
+                <div // Container for the content with max-height
+                  className={`overflow-hidden transition-all duration-500 ${isActive ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"}`}
+                >
+                  <p className="lg:text-lg text-sm text-gray-600 leading-relaxed">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                  </p>
+                </div>
               </div>
             );
           })}
         </div>
-
         {/* Image Section */}
-        <div className="lg:w-3/4 w-full">
-          <img src={offerings} alt="Overcoming Language Barriers" className="w-full mdobject-contain z-10" />
+        <div className="lg:w-[55%] w-full transition-transform duration-300">
+          <img
+            src={offerings}
+            alt="Overcoming Language Barriers"
+            className="w-full object-contain z-10 transition-all duration-500"
+          />
         </div>
       </div>
     </div>
