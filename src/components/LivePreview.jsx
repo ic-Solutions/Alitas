@@ -6,11 +6,11 @@ import phone3 from "../assets/phone3.png";
 const LivePreview = () => {
   return (
     <>
-      <div className="text-center my-42 px-14">
-        <h1 className="text-4xl sm:text-7xl font-bold">
+      <div className="text-center lg:my-40 my-10 lg:px-14">
+        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
           Alitas AI app preview
         </h1>
-        <p className="text-xl sm:text-2xl mt-6 text-gray-600">
+        <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been
           <br className="hidden sm:block" />
@@ -18,21 +18,21 @@ const LivePreview = () => {
         </p>
 
         {/* Scrollable image container */}
-        <div className="flex flex-nowrap justify-start sm:justify-center mt-14 gap-30 overflow-x-auto no-scrollbar px-6 sm:px-16 py-10 max-w-[1800px] mx-auto">
+        <div className="flex justify-start sm:justify-center mt-2 gap-10 sm:px-16 lg:py-10 lg:overflow-hidden overflow-auto scale-90 lg:scale-100">
           <img
             src={phone2}
             alt="Preview 1"
-            className="h-[750px] w-[350px] object-cover flex-shrink-0"
+            className="w-[350px] object-cover"
           />
           <img
             src={phone0}
             alt="Preview 2"
-            className="h-[750px] w-[350px] object-cover flex-shrink-0"
+            className="w-[350px] object-cover"
           />
           <img
             src={phone3}
             alt="Preview 3"
-            className="h-[730px] w-[350px] object-cover flex-shrink-0"
+            className="w-[350px] object-cover"
           />
         </div>
 

@@ -1,13 +1,6 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
-import {
-  FaDiscord,
-  FaYoutube,
-  FaTiktok,
-  FaFacebook,
-  FaLinkedin,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaDiscord, FaYoutube, FaTiktok, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import icon from "../assets/icon.png";
 
 const Footer = () => {
@@ -22,31 +15,27 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-[#FFFFFF] text-gray-700 py-10 px-4 sm:px-6 lg:px-10">
+    <div className="bg-[#EFEFFB] text-gray-700 py-10 px-4 sm:px-6 lg:px-10">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row justify-between border-b border-gray-300 pb-16 gap-16 max-w-screen-2xl mx-auto px-4 sm:px-8">
         {/* Left Section */}
-        <div className=" mx-15 w-full lg:w-1/2">
-          <div className="flex items-center text-4xl text-purple-600 font-[SF-Pro-Display]">
+        <div className="lg:mx-15 w-full lg:w-1/2">
+          <div className="flex items-center text-4xl text-purple-600 font-light font-[SF-Pro-Display]">
             <img className="w-10 h-10 mr-2" src={icon} alt="alitas" /> alitas
           </div>
-          <p className="mt-6 font-semibold text-base leading-relaxed">
-            Subscribe to our newsletter for the latest updates on features and
-            releases.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center mt-6 gap-4">
+          <p className="mt-6 font-semibold text-base leading-relaxed">Subscribe to our newsletter for the latest updates on features and releases.</p>
+          <div className="flex flex-row items-start sm:items-center mt-6 gap-4">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="border border-purple-600 rounded-full px-6 py-3 w-full sm:w-2/3 focus:outline-none"
+              className="border border-purple-600 rounded-full px-6 py-3 lg:w-full sm:w-2/3 focus:outline-none flex-3/4"
             />
-            <button className="text-[#6E2ECD] border border-[#6E2ECD] px-6 py-3 rounded-full w-full sm:w-auto font-semibold">
+            <button className="text-(--color-primary) border border-(--color-primary) px-6 py-3 rounded-full lg:w-full sm:w-auto font-semibold flex-1/4">
               Subscribe
             </button>
           </div>
-          <p className="text-sm mt-2 text-gray-600">
-            By subscribing, you consent to our Privacy Policy and receive
-            updates.
+          <p className="lg:text-sm mt-2 text-gray-600 text-xs lg:w-full w-3/4">
+            By subscribing, you consent to our Privacy Policy and receive updates.
           </p>
         </div>
 
@@ -90,20 +79,45 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center mt-8 gap-6 max-w-screen-2xl mx-auto">
-        {/* Left Text */}
-        <div className="text-sm text-center md:text-left">
-          <p>
-            &copy;2025 All Rights Reserved |{" "}
-            <a href="#" className="text-[#6E2ECD]">
+      {/* Mobile Links */}
+      <div className="lg:hidden block">
+        <div className="flex justify-between py-2">
+          <p>&copy;2025 All Rights Reserved</p>
+          <div className="flex items-center gap-2">
+            <span className="text-xl text-black">🌐</span>
+            <select className="bg-transparent text-sm focus:outline-none">
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex justify-between py-2">
+          <a href="#" className="text-(--color-primary)">
+            Terms of use
+          </a> |
+          <a href="#" className="text-(--color-primary)">
+            Privacy Policy
+          </a> |
+          <a href="#" className="text-(--color-primary)">
+            Policies
+          </a>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row justify-between items-center lg:mt-8 mt-3 gap-6 max-w-screen-2xl mx-auto">
+        {/* Desktop links */}
+        <div className="text-sm text-center md:text-left hidden lg:block">
+          <p className="flex gap-3">
+            <p>&copy;2025 All Rights Reserved &nbsp;&nbsp;|</p>
+            <a href="#" className="text-(--color-primary)">
               Terms of use
-            </a>{" "}
-            |{" "}
-            <a href="#" className="text-[#6E2ECD]">
+            </a>
+            |
+            <a href="#" className="text-(--color-primary)">
               Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a href="#" className="text-[#6E2ECD]">
+            </a>
+            |
+            <a href="#" className="text-(--color-primary)">
               Policies
             </a>
           </p>
@@ -116,7 +130,7 @@ const Footer = () => {
               <a
                 key={idx}
                 href={href}
-                className="bg-[#6E2ECD] p-3 rounded-full hover:bg-purple-700 transition"
+                className="bg-(--color-primary) p-3 rounded-full hover:bg-purple-700 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -124,7 +138,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="items-center gap-2 hidden lg:flex">
             <span className="text-xl text-black">🌐</span>
             <select className="bg-transparent text-sm focus:outline-none">
               <option>English</option>
