@@ -9,6 +9,7 @@ import HeroSection from "./HeroSection";
 import WhatWeOffer from "./WhatWeOffer";
 import IndustriesWeServe from "./IndustriesWeServe";
 import Platforms from "./Platforms";
+import ScrollToTop from "./ScrollToTop";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <Platforms />
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
