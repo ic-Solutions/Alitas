@@ -25,14 +25,18 @@ const Footer = () => {
           </div>
           <p className="mt-6 font-semibold text-base leading-relaxed">Subscribe to our newsletter for the latest updates on features and releases.</p>
           <div className="flex flex-row items-start mt-6 lg:gap-4 gap-2 w-full">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none flex-grow"
-            />
-            <button className="text-(--color-primary) border border-(--color-primary) lg:px-4 p-2 rounded-full font-semibold flex-none hover:text-white hover:bg-(--color-primary) hover:cursor-pointer">
-              Subscribe
-            </button>
+            <div className="flex">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none w-[100%]"
+              />
+            </div>
+            <div className="flex">
+              <button className="text-(--color-primary) border border-(--color-primary) lg:px-4 p-2 rounded-full font-semibold hover:text-white hover:bg-(--color-primary) hover:cursor-pointer">
+                Subscribe
+              </button>
+            </div>
           </div>
           <p className="lg:text-sm mt-2 text-gray-600 text-xs lg:w-full w-3/4">
             By subscribing, you consent to our Privacy Policy and receive updates.
@@ -110,7 +114,7 @@ const Footer = () => {
         {/* Desktop links */}
         <div className="text-sm text-center md:text-left hidden lg:block">
           <p className="flex gap-3">
-            <p>&copy;2025 All Rights Reserved &nbsp;&nbsp;|</p>
+            <span>&copy;2025 All Rights Reserved &nbsp;&nbsp;|</span>
             <a href="#" className="text-(--color-primary)">
               Terms of use
             </a>
@@ -127,7 +131,7 @@ const Footer = () => {
 
         {/* Social Icons + Language Selector */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <div className="flex justify-center space-x-2 text-lg text-white">
+          <div className="flex justify-center gap-2 text-lg text-white flex-wrap">
             {icons.map(({ icon, href }, idx) => (
               <a
                 key={idx}

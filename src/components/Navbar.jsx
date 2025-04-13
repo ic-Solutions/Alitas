@@ -12,6 +12,11 @@ const Navbar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  const navigate = (id) => {
+    let element = document.getElementById(id.slice(1));
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
   const navLinks = [
     { label: "Home", href: "#home" },
     { label: "Live Preview", href: "#live-preview" },
@@ -30,15 +35,16 @@ const Navbar = () => {
 
         <div className="hidden md:flex space-x-10 items-center text-lg">
           {navLinks.map(({ label, href }) => (
-            <a
+            <span
               key={href}
-              href={href}
-              onClick={() => setActiveTab(href)}
-              className={`hover:text-gray-400 relative transition-colors duration-300 ${activeTab === href ? "hover:text-stone-950 font-bold " : ""}`}
+              onClick={() => navigate(href)}
+              className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
+                activeTab === href ? "hover:text-stone-950 font-bold " : ""
+              }`}
             >
               {label}
               {activeTab === href && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
-            </a>
+            </span>
           ))}
         </div>
 
@@ -53,7 +59,7 @@ const Navbar = () => {
           <div>
             <button className="border border-purple-600 px-3 py-2 rounded-full hover:bg-purple-50 transition">
               <div className="flex items-center gap-0 bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text text-sm">
-                <IconPhone className="text-(--color-primary)" stroke={1} size={20}/> Get in Touch
+                <IconPhone className="text-(--color-primary)" stroke={1} size={20} /> Get in Touch
               </div>
             </button>
           </div>

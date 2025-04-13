@@ -32,21 +32,32 @@ function IndustriesWeServe() {
             <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
               With real-time, medically precise translation available at all times, healthcare providers and clinicians can prioritise the ultimate
               goal—providing superior care and improving patient experiences.
+              <br />
               With Alitas, you get:
             </p>
             <ul className="mt-6 space-y-2">
               {[
-                "No more interrupted access to superior care – Real-time language support eliminates the wait for interpreter availability.".split(" – "),
-                "Hesitation-free communication of health concerns – Language is not a hurdle to describing symptoms and receiving effective treatment.".split(" – "),
+                "No more interrupted access to superior care – Real-time language support eliminates the wait for interpreter availability.".split(
+                  " – "
+                ),
+                "Hesitation-free communication of health concerns – Language is not a hurdle to describing symptoms and receiving effective treatment.".split(
+                  " – "
+                ),
                 "Precise and specialised medical terminology – Specialised translations for eliminating scope of misdiagnosis.".split(" – "),
-                "Increased data privacy and security – Eliminating the requirement of third-party interpreters when discussing sensitive health conditions.".split(" – "),
-                "Strengthened provider-patient relationships – Direct communication regardless of patient’s linguistic background, building trust and confidence on mutual ends.".split(" – "),
+                "Increased data privacy and security – Eliminating the requirement of third-party interpreters when discussing sensitive health conditions.".split(
+                  " – "
+                ),
+                "Strengthened provider-patient relationships – Direct communication regardless of patient’s linguistic background, building trust and confidence on mutual ends.".split(
+                  " – "
+                ),
                 "Single-minded focus from your doctor – Eliminating disruptions, providing high-quality care.".split(" – "),
-                "Single-minded focus from your doctor – Eliminating disruptions, providing high-quality care.".split(" – "),
+                "Lowering scope of misdiagnosis – Instant and precise translation results in effective clinical treatment.".split(" – "),
               ].map((txt, i) => (
                 <li key={i} className="flex items-center text-left">
                   <span className="text-purple-600 text-xl mr-4">✔</span>
-                  <p className="text-sm text-gray-500"><b>{txt[0]}</b> - {txt[1]}</p>
+                  <p className="text-sm text-gray-500">
+                    <b>{txt[0]}</b> - {txt[1]}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -58,10 +69,11 @@ function IndustriesWeServe() {
   return (
     <div className="lg:my-40 my-20 font-[SF-Pro-Display]">
       <div className="text-center mt-12 px-4 sm:px-8">
-        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries we serve</h1>
+        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries we Serve</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 lg:max-w-[80%] mx-auto">
-          Explore how Alitas AI is transforming communication across various sectors, breaking down language barriers and fostering seamless
-          interactions.
+          Alitas AI is presently accessible by healthcare providers and clinicians, providing instant and accurate language support—strengthening
+          doctor-patient communication. Moving forward, we are working towards extending our platform’s capabilities to diverse industries—namely,
+          legal, immigration, and customer support—where precision in multilingual interaction is just as crucial.
         </p>
       </div>
 

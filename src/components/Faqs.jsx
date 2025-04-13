@@ -58,7 +58,7 @@ const Faqs = () => {
     setActiveIndex(activeIndex === index ? null : index); // Toggle the selected FAQ
   };
   return (
-    <div className="font-[SF-Pro-Display]">
+    <div className="font-[SF-Pro-Display]" id="faqs">
       <div className="text-center lg:px-4 lg:pb-16 pb-12">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Frequently Asked Questions</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">

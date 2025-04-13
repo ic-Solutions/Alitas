@@ -50,7 +50,7 @@ high-quality care.`,
 ];
 
 function WhatWeOffer() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -59,10 +59,10 @@ function WhatWeOffer() {
     <div className="lg:my-40 my-20 font-[SF-Pro-Display]">
       <div className="text-center px-4 lg:pb-24 pb-2">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">What we Offer ?</h1>
-        <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500">
+        {/* <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
           <br className="hidden sm:block" /> standard dummy text ever since the 1500s, when an
-        </p>
+        </p> */}
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-center my-1 gap-14">
