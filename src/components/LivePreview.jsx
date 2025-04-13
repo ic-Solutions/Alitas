@@ -42,13 +42,12 @@ const LivePreview = () => {
           Healthcare providers can quickly access appointment schedules, patient feedback, and consultation summaries—all in a single place, at their
           convenience.
         </p>
-
-        {/* Scrollable image container for mobile */}
+        {/* Scrollable image container for mobile using Grid */}
         {isMobile && (
           <div className="mt-2 overflow-hidden scale-[90%]">
             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
               {images.map((img, index) => (
-                <img key={index} src={img} alt={`Preview ${index + 1}`} className="w-full max-w-[320px] object-cover flex-shrink-0 mr-2" />
+                <img key={index} src={img} alt={`Preview ${index + 1}`} className="w-full max-w-[80%] object-cover flex-shrink-0 mx-[10%]" />
               ))}
             </div>
           </div>
@@ -80,7 +79,6 @@ const LivePreview = () => {
             })}
           </div>
         )}
-
         {/* Arrows and dots */}
         <div className="flex items-center justify-center space-x-5 mt-2">
           <button
