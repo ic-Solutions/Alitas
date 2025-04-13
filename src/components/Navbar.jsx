@@ -7,7 +7,8 @@ import icon from "../assets/icon.png";
 import { IconMenu2, IconPhone, IconX } from "@tabler/icons-react";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("#home");
+  // const [activeTab, setActiveTab] = useState("#home");
+  const activeTab = "#home"
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -72,17 +73,16 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0">
           {navLinks.map(({ label, href }) => (
-            <a
+            <span
               key={href}
-              href={href}
               onClick={() => {
-                setActiveTab(href);
+                navigate(href);
                 setMenuOpen(false);
               }}
               className={`text-lg ${activeTab === href ? "text-purple-500" : "text-gray-800"}`}
             >
               {label}
-            </a>
+            </span>
           ))}
         </div>
       )}

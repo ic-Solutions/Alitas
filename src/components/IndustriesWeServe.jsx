@@ -28,13 +28,12 @@ function IndustriesWeServe() {
       default:
         return (
           <>
-            <h2 className="text-2xl font-bold">Alitas AI bridges the gap. </h2>
-            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
+            <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] text-left">
               With real-time, medically precise translation available at all times, healthcare providers and clinicians can prioritise the ultimate
               goal—providing superior care and improving patient experiences.
-              <br />
-              With Alitas, you get:
             </p>
+            <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
             <ul className="mt-6 space-y-2">
               {[
                 "No more interrupted access to superior care – Real-time language support eliminates the wait for interpreter availability.".split(
@@ -69,7 +68,7 @@ function IndustriesWeServe() {
   return (
     <div className="lg:my-40 my-20 font-[SF-Pro-Display]">
       <div className="text-center mt-12 px-4 sm:px-8">
-        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries we Serve</h1>
+        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries We Serve</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 lg:max-w-[80%] mx-auto">
           Alitas AI is presently accessible by healthcare providers and clinicians, providing instant and accurate language support—strengthening
           doctor-patient communication. Moving forward, we are working towards extending our platform’s capabilities to diverse industries—namely,

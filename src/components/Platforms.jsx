@@ -17,7 +17,7 @@ function Platforms() {
         <div className="w-full md:w-1/2 space-y-10 font-[SF-Pro-Display] text-center lg:text-left lg:ps-12">
           <div>
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Accessible Across a Wide Range of Platforms</h3>
-            <p className="text-gray-500 mt-2 text-sm md:text-base">
+            <p className="text-gray-500 mt-2 text-sm md:text-base text-left">
               <li>
                 <b>iOS App</b>: Optimised for both <b>iPhone</b> and <b>iPad</b> users
               </li>
