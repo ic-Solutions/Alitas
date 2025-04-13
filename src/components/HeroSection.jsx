@@ -5,21 +5,30 @@ import HeroBackground from "../assets/hero_section_bg.png";
 import upcoming from "../assets/rtrt.png";
 import quickAccess from "../assets/quick_access_new.png";
 import language from "../assets/language.png";
-import mobileFeatures from "../assets/mobile features.png"
+import mobileFeatures from "../assets/mobile features.png";
 
 function HeroSection() {
   return (
-    <div style={{ backgroundImage: `url(${HeroBackground})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", paddingBottom: "100px" }}>
+    <div
+      style={{
+        backgroundImage: `url(${HeroBackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        paddingBottom: "100px",
+      }}
+    >
       <div className="bg-(--color-secondary) lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl lg:pb-[13%] pb-[50%]">
         <Navbar />
         <div className="lg:mx-[15%] mx-1 text-center lg:pt-10 pt-5">
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl/22 font-[700] font-[SF Pro Display] leading-tight text-[#1F1F1F] mb-6">
-            Break Language Barriers in Healthcare with
-            <span className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</span>
+            <span className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</span>– Enhancing Healthcare by
+            Breaking Language Barriers
           </h1>
           <p className="lg:text-lg text-sm/6 lg:max-w-[80%] lg:mx-auto">
-            Alitas AI provides real-time, accurate, and secure language translation for hospitals. Enhance communication between doctors and patients
-            effortlessly.
+            <b>Alitas AI</b> uses advanced technology to overcome language barriers that hinder patient care, reducing considerable wait times. Available
+            24/7, this innovative solution promotes effortless communication between healthcare providers and patients, regardless of language. By
+            enhancing care quality and empowering patients, Alitas creates a more inclusive, and patient-centric healthcare ecosystem.
           </p>
         </div>
       </div>
@@ -68,11 +77,7 @@ function HeroSection() {
         {/* Effects around Video */}
         <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center mx-auto">
           {/* Upcoming - Top Left */}
-          <img
-            src={upcoming}
-            alt="Upcoming"
-            className="absolute left-6 top-[-76px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20"
-          />
+          <img src={upcoming} alt="Upcoming" className="absolute left-6 top-[-76px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20" />
 
           {/* Quick Access - Top Right */}
           <img

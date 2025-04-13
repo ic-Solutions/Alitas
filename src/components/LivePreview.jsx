@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import phone0 from "../assets/phone.png";
 import phone2 from "../assets/phone2.png";
@@ -8,17 +7,17 @@ const images = [phone2, phone0, phone3];
 
 const LivePreview = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -33,25 +32,23 @@ const LivePreview = () => {
   return (
     <>
       <div className="text-center lg:px-14">
-        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Alitas AI app preview</h1>
-        <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 max-w-[80%] mx-auto">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
+          Real-time Access. Efficient Workflow. Superior Care.
+        </h1>
+        <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
+          Alitas AI comes in-built with single sign-on (SSO), enabling easy and uninterrupted access to Alitas anytime, anywhere. Our round-the-clock
+          language interpretation tool helps providers reduce wait times and deliver real-time, superior-quality patient care.
+          <br />
+          Healthcare providers can quickly access appointment schedules, patient feedback, and consultation summaries—all in a single place, at their
+          convenience.
         </p>
 
         {/* Scrollable image container for mobile */}
         {isMobile && (
           <div className="mt-2 overflow-hidden scale-[90%]">
-            <div
-              className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
+            <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
               {images.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Preview ${index + 1}`}
-                  className="w-full max-w-[320px] object-cover flex-shrink-0 mr-2"
-                />
+                <img key={index} src={img} alt={`Preview ${index + 1}`} className="w-full max-w-[320px] object-cover flex-shrink-0 mr-2" />
               ))}
             </div>
           </div>
@@ -64,9 +61,9 @@ const LivePreview = () => {
               const isMiddle = index === currentIndex;
               const isLeft = index === (currentIndex - 1 + images.length) % images.length;
               const isRight = index === (currentIndex + 1) % images.length;
-              const scale = isMiddle ? 'scale-110' : 'scale-90';
-              const zIndex = isMiddle ? 'z-10' : 'z-0';
-              const opacity = isLeft || isRight ? 'opacity-75' : 'opacity-100';
+              const scale = isMiddle ? "scale-110" : "scale-90";
+              const zIndex = isMiddle ? "z-10" : "z-0";
+              const opacity = isLeft || isRight ? "opacity-75" : "opacity-100";
 
               return (
                 <img
@@ -75,8 +72,8 @@ const LivePreview = () => {
                   alt={`Preview ${index + 1}`}
                   className={`w-[30%] max-w-[240px] object-cover transition-all duration-300 ease-in-out ${scale} ${zIndex} ${opacity}`}
                   style={{
-                    marginLeft: isRight ? '-20px' : '',
-                    marginRight: isLeft ? '-20px' : '',
+                    marginLeft: isRight ? "-20px" : "",
+                    marginRight: isLeft ? "-20px" : "",
                   }}
                 />
               );
@@ -98,12 +95,7 @@ const LivePreview = () => {
           {!isMobile && (
             <div className="flex items-center space-x-2">
               {images.map((_, index) => (
-                <span
-                  key={index}
-                  className={`w-2.5 h-2.5 rounded-full block ${
-                    index === currentIndex ? 'bg-purple-600' : 'bg-gray-300'
-                  }`}
-                ></span>
+                <span key={index} className={`w-2.5 h-2.5 rounded-full block ${index === currentIndex ? "bg-purple-600" : "bg-gray-300"}`}></span>
               ))}
             </div>
           )}
