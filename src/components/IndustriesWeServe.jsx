@@ -78,6 +78,7 @@ function IndustriesWeServe() {
 
       <div className="lg:mt-16 mt-4 lg:px-4">
         <div ref={tabsContainerRef} className="relative flex sm:justify-around overflow-x-auto pb-4 whitespace-nowrap gap-4 flex-wrap justify-center">
+        <div className="absolute bottom-0 left-[50%] w-[87%] h-[4px] translate-x-[-50%] bg-gray-400 z-0 hidden lg:block"></div>
           {industries.map((tab, index) => (
             <button
               key={index}
