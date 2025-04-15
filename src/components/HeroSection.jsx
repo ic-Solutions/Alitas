@@ -39,21 +39,21 @@ function HeroSection() {
           <img
             src={upcoming}
             alt="Upcoming"
-            className="hidden lg:block absolute left-0 top-5 max-w-[300px] drop-shadow-lg rounded-3xl object-contain z-20"
+            className="hidden lg:block absolute left-0 top-5 max-w-[23.5%] drop-shadow-lg rounded-3xl object-contain z-20"
           />
 
           {/* Languages - Mid Right */}
           <img
             src={language}
             alt="Languages"
-            className="hidden lg:block absolute right-20 top-10 max-h-[300px] drop-shadow-lg rounded-3xl object-contain z-20"
+            className="hidden lg:block absolute right-20 top-10 max-w-[17.5%] drop-shadow-lg rounded-3xl object-contain z-20"
           />
 
           {/* Quick Access - Bottom Left */}
           <img
             src={quickAccess}
             alt="Quick Access"
-            className="hidden lg:block absolute left-0 top-50 max-w-[300px] drop-shadow-lg rounded-3xl object-contain z-20"
+            className="hidden lg:block absolute left-0 top-50 max-w-[23.75%] drop-shadow-lg rounded-3xl object-contain z-20"
           />
         </div>
         {/* Main Video Section */}

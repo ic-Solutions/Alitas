@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     // my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]
-    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ paddingInline: "0.02rem" }}>
+    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ paddingInline: "0.02rem" }} id="nav">
       {/* max-w-[1440px] - removed */}
       <div className="bg-white rounded-3xl lg:px-5 px-2 py-4 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
         <div className="flex items-center text-[20px] font-[600] tracking-wider text-(--color-primary)">
