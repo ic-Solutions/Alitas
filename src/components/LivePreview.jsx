@@ -31,7 +31,7 @@ const LivePreview = () => {
 
   return (
     <>
-      <div className="text-center lg:px-14" id="live-preview">
+      <div className="text-center lg:px-14 font-[SF-Pro-Display]" id="live-preview">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
           Real-time Access. Efficient Workflow. Superior Care.
         </h1>

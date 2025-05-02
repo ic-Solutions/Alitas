@@ -66,7 +66,7 @@ function IndustriesWeServe() {
   };
 
   return (
-    <div className="lg:my-40 my-20 font-[SF-Pro-Display]">
+    <div className="lg:my-40 my-20 font-[SF-Pro-Display]" id="solutions">
       <div className="text-center mt-12 px-4 sm:px-8">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries We Serve</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 lg:max-w-[80%] mx-auto">

@@ -6,11 +6,11 @@ import icon from "../assets/icon.png";
 const Footer = () => {
   const icons = [
     { icon: <MdEmail />, href: "#" },
-    { icon: <FaDiscord />, href: "#" },
+    // { icon: <FaDiscord />, href: "#" },
     { icon: <FaXTwitter />, href: "#" },
     { icon: <FaYoutube />, href: "#" },
-    { icon: <FaTiktok />, href: "#" },
-    { icon: <FaFacebook />, href: "#" },
+    // { icon: <FaTiktok />, href: "#" },
+    // { icon: <FaFacebook />, href: "#" },
     { icon: <FaLinkedin />, href: "#" },
   ];
 
@@ -45,38 +45,33 @@ const Footer = () => {
 
         {/* Right Section */}
         <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-16 font-[DM Sans] text-base">
-          {/* Products */}
+          {/* Platform */}
           <div>
-            <h3 className="font-bold text-lg mb-5">Products</h3>
+            <h3 className="font-bold text-lg mb-5">Platform</h3>
             <ul className="space-y-4">
-              <li>Background Remover</li>
-              <li>Text Remover</li>
-              <li>Background Changer</li>
-              <li>Image Upscaler</li>
-              <li>Text Remover</li>
+              <li>Alitas AI Translation</li>
+              <li>Alitas Scribe</li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Solutions */}
           <div>
-            <h3 className="font-bold text-lg mb-5">Resources</h3>
+            <h3 className="font-bold text-lg mb-5">Solutions</h3>
             <ul className="space-y-4">
-              <li>Background Remover</li>
-              <li>Background Changer</li>
-              <li>Image Upscaler</li>
-              <li>Text Remover</li>
+              <li>Healthcare</li>
+              <li>Immigration</li>
+              <li>Tourism</li>
+              <li>Finance</li>
+              <li>Manufacturing</li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Company */}
           <div>
-            <h3 className="font-bold text-lg mb-5">Support</h3>
+            <h3 className="font-bold text-lg mb-5">Company</h3>
             <ul className="space-y-4">
-              <li>Background Remover</li>
-              <li>Text Remover</li>
-              <li>Background Changer</li>
-              <li>Image Upscaler</li>
-              <li>Background Changer</li>
+              <li>About Us</li>
+              <li>Contact Us</li>
             </ul>
           </div>
         </div>
