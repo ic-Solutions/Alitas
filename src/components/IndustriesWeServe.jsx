@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import dImage from "../assets/doc.png";
+import healthcareImg from "../assets/industries/medical.jpg";
+import immigrationImg from "../assets/industries/immigration.jpg";
+import tourismImg from "../assets/industries/tourism.jpg";
+import financeImg from "../assets/industries/finance.jpg";
+import manufacturingImg from "../assets/industries/manufacturing.jpg";
 
 function IndustriesWeServe() {
   const [activeTab, setActiveTab] = useState("Healthcare");
@@ -7,6 +11,7 @@ function IndustriesWeServe() {
   const tabsContainerRef = useRef(null);
 
   const industries = ["Healthcare", "Immigration", "Tourism", "Finance", "Manufacturing"];
+  const industriesImages = [healthcareImg, immigrationImg, tourismImg, financeImg, manufacturingImg];
 
   useEffect(() => {
     const activeTabElement = tabsContainerRef.current.querySelector(`.tab-button.active`);
@@ -25,11 +30,11 @@ function IndustriesWeServe() {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      default:
+      case "Healthcare":
         return (
           <>
             <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
-            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] text-left">
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
               With real-time, medically precise translation available at all times, healthcare providers and clinicians can prioritise the ultimate
               goal—providing superior care and improving patient experiences.
             </p>
@@ -55,13 +60,151 @@ function IndustriesWeServe() {
                 <li key={i} className="flex items-center text-left">
                   <span className="text-purple-600 text-xl mr-4">✔</span>
                   <p className="text-sm text-gray-500">
-                    <b>{txt[0]}</b> - {txt[1]}
+                    <b>{txt[0]}</b> – {txt[1]}
                   </p>
                 </li>
               ))}
             </ul>
           </>
         );
+      case "Immigration":
+        return (
+          <>
+            <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
+              With real-time language translation, immigration officials can strategically focus on their core responsibility — delivering
+              high-quality and personalised guidance to each applicant.
+            </p>
+            <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
+            <ul className="mt-6 space-y-2">
+              {[
+                "Reduced misunderstandings and errors – Real-time language support facilitates effortless communication between applicants and immigration officials.".split(
+                  " – "
+                ),
+                "No more unaccountable delays in application process – Instant and precise translation reduces errors and delays in application process.".split(
+                  " – "
+                ),
+                "Higher satisfaction rate among applicants – Language is not a barrier for applicants when communicating their concerns to immigration officials.".split(
+                  " – "
+                ),
+                "Strengthened customer support – Real-time language translation facilitates timely resolution of queries of applicants by immigration officials.".split(
+                  " – "
+                ),
+              ].map((txt, i) => (
+                <li key={i} className="flex items-center text-left">
+                  <span className="text-purple-600 text-xl mr-4">✔</span>
+                  <p className="text-sm text-gray-500">
+                    <b>{txt[0]}</b> – {txt[1]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      case "Tourism":
+        return (
+          <>
+            <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
+              By enabling seamless communication, tourism enterprises can prioritise what truly matters — delivering authentic, transformative
+              experiences that creates a newfound appreciation for local culture among travellers.
+            </p>
+            <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
+            <ul className="mt-6 space-y-2">
+              {[
+                "No more interrupted communication – Real-time language translation enables seamless communication between tourism officials and travellers.".split(
+                  " – "
+                ),
+                "Enhanced customer support – Real-time language translation empowers tourism officials to provide timely resolution of queries.".split(
+                  " – "
+                ),
+                "Greater ease of access – Instant and precise language translation makes it easier to serve international clients from multilingual backgrounds.".split(
+                  " – "
+                ),
+                "Higher satisfaction rate among tourists – Providing enriching, immersive experiences to tourists, increasing your customer retention.".split(
+                  " – "
+                ),
+              ].map((txt, i) => (
+                <li key={i} className="flex items-center text-left">
+                  <span className="text-purple-600 text-xl mr-4">✔</span>
+                  <p className="text-sm text-gray-500">
+                    <b>{txt[0]}</b> – {txt[1]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      case "Finance":
+        return (
+          <>
+            <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
+              Real-time translation enables financial institutions to engage clients worldwide by breaking down language barriers, enhancing
+              understanding of complex financial information, and expediting informed decision-making to achieve personalised financial goals.
+            </p>
+            <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
+            <ul className="mt-6 space-y-2">
+              {[
+                "Round-the-clock support – Real-time language translation empowers financial institutions to provide 24/7 support to customers across the globe.".split(
+                  " – "
+                ),
+                "Hassle-free transactions – Language is no barrier to facilitate seamless transactions between financial institutions and clients across linguistic backgrounds.".split(
+                  " – "
+                ),
+                "Increased customer retention – Instant and accurate language translations empowers financial institutions to provide timely assistance to clients.".split(
+                  " – "
+                ),
+                "Business expansion at an unprecedented pace – Financial institutions can focus on market expansion and enter untapped business arenas.".split(
+                  " – "
+                ),
+              ].map((txt, i) => (
+                <li key={i} className="flex items-center text-left">
+                  <span className="text-purple-600 text-xl mr-4">✔</span>
+                  <p className="text-sm text-gray-500">
+                    <b>{txt[0]}</b> – {txt[1]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      case "Manufacturing":
+        return (
+          <>
+            <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
+            <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
+              With real-time, precise translation available at all times, manufacturers can optimise global supply chains, fueling innovation and
+              competitiveness.
+            </p>
+            <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
+            <ul className="mt-6 space-y-2">
+              {[
+                "Increased quality control – Instant and precise language translation empowers manufacturing teams to resolve quality issues and enhance product quality.".split(
+                  " – "
+                ),
+                "Strengthened customer support – Real-time language translation enables manufacturing companies to provide support in customers’ native language.".split(
+                  " – "
+                ),
+                "Less scope of errors and misunderstandings – Seamless communication among teams, suppliers, and customers globally by overcoming language barriers.".split(
+                  " – "
+                ),
+                "Ease of compliance and regulations – Real-time language translations empowers manufacturing companies to meet regulatory requirements in diverse languages.".split(
+                  " – "
+                ),
+              ].map((txt, i) => (
+                <li key={i} className="flex items-center text-left">
+                  <span className="text-purple-600 text-xl mr-4">✔</span>
+                  <p className="text-sm text-gray-500">
+                    <b>{txt[0]}</b> – {txt[1]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      default:
+        return <></>;
     }
   };
 
@@ -93,9 +236,13 @@ function IndustriesWeServe() {
           <div ref={tabIndicatorRef} className="absolute bottom-0 left-0 h-1 bg-purple-600 transition-all duration-300 z-10 hidden lg:block"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:my-10 my-5">
+        <div className="flex flex-col lg:flex-row justify-between lg:my-10 my-5">
           <div className="lg:w-1/2">
-            <img src={dImage} alt="Industry Example" className="rounded-[20px] shadow-md w-full object-cover" />
+            <img
+              src={industriesImages[industries.findIndex((ele) => ele === activeTab)]}
+              alt={`alitas in ${activeTab}`}
+              className="rounded-[20px] shadow-md w-full object-cover"
+            />
           </div>
           <div className="w-full lg:w-1/2 lg:pl-10 pt-8 lg:text-left text-center">{renderTabContent()}</div>
         </div>
