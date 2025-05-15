@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./RotatingText.css";
 
-const RotatingText = ({ items, className = "", typingInterval = 50, pause = 3000, cursor = false }) => {
+const RotatingText = ({ items, className = "", typingInterval = 50, pause = 5000, cursor = false }) => {
   const [output, setOutput] = useState(items[0]);
   const [index, setIndex] = useState(1);
   const [cursorPos, setCursorPos] = useState(0);
