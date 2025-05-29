@@ -38,8 +38,8 @@ function Platforms() {
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
           <div className="space-y-6 text-center lg:text-left">
             <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
-              Try it yourself
-              <br /> Get the app now!
+              Explore more
+              <br /> Get in touch now!
             </h1>
             <p className="text-gray-700 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
               Alitas AI enables healthcare providers to minimize wait times and render high quality patient care—marking a step forward in the
