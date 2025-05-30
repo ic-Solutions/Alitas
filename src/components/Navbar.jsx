@@ -5,10 +5,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import icon from "../assets/icon.png";
 
 import { IconMenu2, IconKey, IconX } from "@tabler/icons-react";
+import { NavLink } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({ activeTab = "" }) => {
   // const [activeTab, setActiveTab] = useState("#home");
-  const activeTab = "#home"
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -18,76 +18,115 @@ const Navbar = () => {
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
-  const navLinks = [
-    { label: "Platform", href: "#platform" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "About Us", href: "#about-us" },
-    { label: "Contact Us", href: "#contact-us" },
-  ];
-
   return (
     // my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]
-    <nav className="my-6 font-[SF-Pro-Display] w-full" style={{ paddingInline: "0.02rem" }} id="nav">
-      {/* max-w-[1440px] - removed */}
-      <div className="bg-white rounded-3xl lg:px-5 px-2 py-4 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
-        <div className="flex items-center text-[1.25rem] lg:text-[2rem] font-[600] tracking-wider text-(--color-primary)">
-          <img className="w-8 h-8 lg:h-16 lg:w-16" src={icon} alt="alitas" />
-          alitas
-        </div>
+      <>
+        {/* max-w-[1440px] - removed */}
+        <div className="lg:px-5 px-2 py-4 flex justify-between items-center mx-auto" style={{ marginInline: 0 }}>
+          <div className="flex items-center text-[1.25rem] lg:text-[2rem] font-[600] tracking-wider text-(--color-primary)">
+            <img className="w-8 h-8 lg:h-16 lg:w-16" src={icon} alt="alitas" />
+            alitas
+          </div>
 
-        <div className="hidden md:flex space-x-10 items-center text-lg">
-          {navLinks.map(({ label, href }) => (
+          <div className="hidden md:flex space-x-10 items-center text-lg">
             <span
-              key={href}
-              onClick={() => navigate(href)}
+              key={"#platform"}
+              onClick={() => navigate("#platform")}
               className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
-                activeTab === href ? "hover:text-stone-950 font-bold " : ""
+                activeTab === "#platform" ? "hover:text-stone-950 font-bold " : ""
               }`}
             >
-              {label}
-              {activeTab === href && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
+              Platform
+              {activeTab === "#platform" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
             </span>
-          ))}
-        </div>
+            <span
+              key={"#solutions"}
+              onClick={() => navigate("#solutions")}
+              className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
+                activeTab === "#solutions" ? "hover:text-stone-950 font-bold " : ""
+              }`}
+            >
+              Solutions
+              {activeTab === "#solutions" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
+            </span>
+            <NavLink
+              key={"/about-us"}
+              to="/about-us"
+              className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
+                activeTab === "/about-us" ? "hover:text-stone-950 font-bold " : ""
+              }`}
+            >
+              About Us
+              {activeTab === "/about-us" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
+            </NavLink>
+            <NavLink
+              key={"/contact-us"}
+              to="/contact-us"
+              className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
+                activeTab === "/contact-us" ? "hover:text-stone-950 font-bold " : ""
+              }`}
+            >
+              Contact Us
+              {activeTab === "/contact-us" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
+            </NavLink>
+          </div>
 
-        <div className="hidden md:block">
-          <button className="border border-purple-600 px-4 py-2 rounded-full hover:bg-purple-50 transition">
-            <div className="flex items-center gap-2 bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text">
-              <IconKey className="text-(--color-primary)" stroke={1} /> Sign In
-            </div>
-          </button>
-        </div>
-        <div className="md:hidden flex items-center gap-2">
-          <div>
-            <button className="border border-purple-600 px-3 py-2 rounded-full hover:bg-purple-50 transition">
-              <div className="flex items-center gap-0 bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text text-sm">
-                <IconKey className="text-(--color-primary)" stroke={1} size={20} /> Sign In
+          <div className="hidden md:block">
+            <button className="border border-purple-600 px-4 py-2 rounded-full hover:bg-purple-50 transition">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text">
+                <IconKey className="text-(--color-primary)" stroke={1} /> Sign In
               </div>
             </button>
           </div>
-          <div className="md:hidden text-purple-500 text-2xl cursor-pointer rounded-full border border-purple-500 p-1" onClick={toggleMenu}>
-            {menuOpen ? <IconX /> : <IconMenu2 />}
+          <div className="md:hidden flex items-center gap-2">
+            <div>
+              <button className="border border-purple-600 px-3 py-2 rounded-full hover:bg-purple-50 transition">
+                <div className="flex items-center gap-0 bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text text-sm">
+                  <IconKey className="text-(--color-primary)" stroke={1} size={20} /> Sign In
+                </div>
+              </button>
+            </div>
+            <div className="md:hidden text-purple-500 text-2xl cursor-pointer rounded-full border border-purple-500 p-1" onClick={toggleMenu}>
+              {menuOpen ? <IconX /> : <IconMenu2 />}
+            </div>
           </div>
         </div>
-      </div>
 
-      {menuOpen && (
-        <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0">
-          {navLinks.map(({ label, href }) => (
+        {menuOpen && (
+          <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0">
             <span
-              key={href}
+              key={"#platform"}
               onClick={() => {
-                navigate(href);
+                navigate("#platform");
                 setMenuOpen(false);
               }}
-              className={`text-lg ${activeTab === href ? "text-purple-500" : "text-gray-800"}`}
+              className={`text-lg ${activeTab === "#platform" ? "text-purple-500" : "text-gray-800"}`}
             >
-              {label}
+              Platform
             </span>
-          ))}
-        </div>
-      )}
-    </nav>
+            <span
+              key={"#solutions"}
+              onClick={() => {
+                navigate("#solutions");
+                setMenuOpen(false);
+              }}
+              className={`text-lg ${activeTab === "#solutions" ? "text-purple-500" : "text-gray-800"}`}
+            >
+              Solutions
+            </span>
+            <NavLink key={"#about-us"} to={"/about-us"} className={`text-lg ${activeTab === "/about-us" ? "text-purple-500" : "text-gray-800"}`}>
+              About Us
+            </NavLink>
+            <NavLink
+              key={"#contact-us"}
+              to={"/contact-us"}
+              className={`text-lg ${activeTab === "/contact-us" ? "text-purple-500" : "text-gray-800"}`}
+            >
+              Contact Us
+            </NavLink>
+          </div>
+        )}
+      </>
   );
 };
 
