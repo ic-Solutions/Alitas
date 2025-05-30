@@ -16,7 +16,7 @@ const textItems = [
 ];
 
 function HeroSection() {
-  
+
   const videoRef = useRef(null);
   const mobileVideoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -46,7 +46,7 @@ function HeroSection() {
       }}
     >
       <div className="bg-[linear-gradient(90deg,#F6EAFF_0%,#EDF0FF_41%,#BAC8FF_75%,#BBA3FF_100%)] lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl lg:pb-[13%] pb-[50%]">
-        <nav className="my-6 font-[SF-Pro-Display] w-full bg-white rounded-3xl" style={{ paddingInline: "0.02rem" }} id="nav">
+        <nav className="my-6 font-[SF-Pro-Display] w-full bg-white lg:rounded-3xl rounded-full" style={{ paddingInline: "0.02rem" }} id="nav">
           <Navbar />
         </nav>
         <div className="lg:mx-[15%] mx-1 text-center lg:pt-10 pt-5">

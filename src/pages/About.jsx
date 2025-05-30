@@ -65,7 +65,7 @@ const industriesWeServe = [
 function About() {
   return (
     <div className="font-[SF-Pro-Display]">
-      <div className="bg-[linear-gradient(90deg,#AC73D966_0%,#4A00C966_100%)] lg:m-14 lg:pt-4 lg:p-8 m-4 pt-1 p-6 rounded-4xl">
+      <div className="bg-[linear-gradient(90deg,#AC73D966_0%,#4A00C966_100%)] lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl">
         <nav
           className="bg-white lg:bg-transparent my-6 font-[SF-Pro-Display] w-full lg:rounded-3xl rounded-full"
           style={{ paddingInline: "0.02rem" }}
@@ -73,7 +73,7 @@ function About() {
         >
           <Navbar />
         </nav>
-        <div className="flex flex-col md:flex-row justify-between lg:p-8 gap-10 pb-8">
+        <div className="flex flex-col md:flex-row justify-between lg:p-12 gap-10 pb-8">
           <div className="flex-1/2 flex flex-col justify-between text-center lg:text-left">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl/22 font-[600] font-[SF-Pro-Display] leading-[138%] text-[#1F1F1F] mb-6">
               Empowering Connection. <br />
