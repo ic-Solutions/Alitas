@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import phone0 from "../assets/phone.png";
-import phone2 from "../assets/phone2.png";
-import phone3 from "../assets/phone3.png";
+import phone0 from "../assets/livePreview/1.png";
+import phone1 from "../assets/livePreview/2.png";
+import phone2 from "../assets/livePreview/3.png";
+import phone3 from "../assets/livePreview/4.png";
 
-const images = [phone2, phone0, phone3];
+const images = [phone0, phone1, phone2, phone3];
 
 const LivePreview = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
   useEffect(() => {
