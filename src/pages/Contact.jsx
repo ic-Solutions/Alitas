@@ -8,7 +8,6 @@ function Contact() {
   const [value, setValue] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
   const submitForm = ()=>{
-    console.log(value)
     alert("Response Recorded")
     setValue({ name: "", email: "", phone: "", subject: "", message: "" })
   }
@@ -18,28 +17,28 @@ function Contact() {
         <nav className="bg-[#AC73D950] my-6 font-[SF-Pro-Display] w-full lg:rounded-3xl rounded-full" style={{ paddingInline: "0.02rem" }} id="nav">
           <Navbar />
         </nav>
-        <div className="text-center lg:w-1/2 mx-auto flex flex-col gap-8 lg:py-8 py-4">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl/22 font-[600] font-[SF Pro Display] leading-[138%] text-[#1F1F1F]">
+        <div className="text-center lg:w-1/2 mx-auto flex flex-col gap-4 lg:py-8 py-4">
+          <h2 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
             Connect with our Team
           </h2>
-          <span className="lg:text-2xl text-sm/6 lg:mx-auto leading-[148%] text-gray-700 lg:w-full w-4/5 mx-auto">
+          <span className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
             Whether you’re looking for support, partnerships, or general enquiries — we’re here to help.
           </span>
         </div>
         <div className="flex flex-wrap lg:w-3/4 mx-auto">
-          <div className="w-full lg:w-1/2 lg:p-12 lg:py-12 py-4">
+          <div className="w-full lg:w-1/2 lg:p-12 lg:py-4 py-4">
             <FormInput label="Name" placeholder="Input your text" value={value} setValue={setValue} index="name" />
           </div>
-          <div className="w-full lg:w-1/2 lg:p-12 lg:py-12 py-4">
+          <div className="w-full lg:w-1/2 lg:p-12 lg:py-4 py-4">
             <FormInput label="Email" placeholder="Input your text" value={value} setValue={setValue} index="email" />
           </div>
-          <div className="w-full lg:w-1/2 lg:p-12 lg:py-12 py-4">
+          <div className="w-full lg:w-1/2 lg:p-12 lg:py-4 py-4">
             <FormInput label="Phone Number" placeholder="Input your text" value={value} setValue={setValue} index="phone" />
           </div>
-          <div className="w-full lg:w-1/2 lg:p-12 lg:py-12 py-4">
+          <div className="w-full lg:w-1/2 lg:p-12 lg:py-4 py-4">
             <FormInput label="Subject" placeholder="Input your text" value={value} setValue={setValue} index="subject" />
           </div>
-          <div className="w-full lg:p-12 lg:py-12 py-4 pb-12">
+          <div className="w-full lg:p-12 lg:py-4 py-4 pb-12">
             <FormInput label="Message" placeholder="Input your text" value={value} setValue={setValue} index="message" />
           </div>
           <div className="flex lg:justify-end justify-center w-full lg:p-8 lg:py-0">
@@ -47,10 +46,10 @@ function Contact() {
           </div>
         </div>
         <div className="text-center lg:w-1/2 mx-auto flex flex-col gap-4 lg:py-16 py-16 pb-8">
-          <h2 className="text-3xl lg:text-5xl/22 font-[600] font-[SF Pro Display] leading-[138%] text-[#1F1F1F]">
+          <h2 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
             Get in Touch
           </h2>
-          <span className="lg:text-2xl text-lg/6 lg:mx-auto leading-[148%] text-gray-700 pb-8 w-3/4 mx-auto">
+          <span className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto pb-4">
             We’re here to listen, help, and connect — reach out anytime
           </span>
           <div className="flex mx-auto justify-between">
@@ -58,15 +57,15 @@ function Contact() {
               <span>
                 <IconMapPin className="w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]" stroke={1.5} />
               </span>
-              <span className="font-[600] text-xl lg:pb-8 pb-4">Address</span>
-              <span className="text-gray-700 text-base/6 lg:text-lg">Alitas AI Pty Ltd, Level 17, Tower 4, 727 Collins street, Docklands. VIC-3008</span>
+              <span className="font-[600] text-xl pb-4">Address</span>
+              <span className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">Alitas AI Pty Ltd, Level 17, Tower 4, 727 Collins street, Docklands. VIC-3008</span>
             </div>
             <div className="flex flex-col w-1/2 items-center">
               <span>
                 <IconMail className="w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]" stroke={1.5} />
               </span>
-              <span className="font-[600] text-xl lg:pb-8 pb-4">Email</span>
-              <span className="text-gray-700 text-base/6 lg:text-lg">contact@alitas.ai</span>
+              <span className="font-[600] text-xl pb-4">Email</span>
+              <span className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">contact@alitas.ai</span>
             </div>
           </div>
         </div>

@@ -5,9 +5,9 @@ function FormInput({ label, placeholder, value, setValue, index }) {
     }
 
   return (
-    <div className="flex flex-col lg:gap-2">
-      <div className="text-2xl font-[600]">{label}</div>
-      <input className="text-lg lg:py-3 py-2 lg:border-b-2 border-b-1 focus:outline-0" type="text" placeholder={placeholder} value={value[index]} onChange={(e) => updateValue(e.target.value)} />
+    <div className="flex flex-col">
+      <div className="text-xl lg:text-2xl/16 font-bold leading-tight text-gray-900">{label}</div>
+      <input className="text-lg py-2 lg:border-b-2 border-b-1 focus:outline-0" type="text" placeholder={placeholder} value={value[index]} onChange={(e) => updateValue(e.target.value)} />
     </div>
   );
 }
