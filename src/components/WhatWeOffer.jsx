@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import offerings from "../assets/what-we-offer.png";
+import offerings from "../assets/whatweoffer/whatweoffer.png";
 import { IconChevronDown } from "@tabler/icons-react";
 
 const offeringsList = [
@@ -74,14 +74,8 @@ function WhatWeOffer() {
             const isActive = activeIndex === index;
 
             return (
-              <div
-                key={index}
-                className={`transition-all lg:p-10 lg:pt-10 p-3 duration-300 border-b border-gray-300 ${isActive ? "bg-[#F5F3FF] border-b-0" : ""}`}
-              >
-                <h3
-                  className="lg:text-xl text-lg font-semibold flex justify-between items-center cursor-pointer"
-                  onClick={() => toggleAccordion(index)}
-                >
+              <div key={index} className={`transition-all lg:p-10 lg:pt-10 p-3 duration-300 border-b border-gray-300 ${isActive ? "bg-[#F5F3FF] border-b-0" : ""}`}>
+                <h3 className="lg:text-xl text-lg font-semibold flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(index)}>
                   {item.heading}
                   <IconChevronDown className={`h-6 w-6 text-gray-600 transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
                 </h3>
