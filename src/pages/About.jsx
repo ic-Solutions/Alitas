@@ -15,6 +15,7 @@ import manufacturing from "../assets/aboutUs/industries/manufacturing.png";
 
 import { IconArrowRight } from "@tabler/icons-react";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router";
 import ScrollToTop from "../components/ScrollToTop";
 
 const coreValues = [
@@ -64,6 +65,11 @@ const industriesWeServe = [
 ];
 
 function About() {
+  const navigate = useNavigate();
+  const onClick = (industry) => {
+    navigate(`/?tab=${encodeURIComponent(industry)}#solutions`);
+  };
+
   return (
     <div className="font-[SF-Pro-Display]">
       <div className="bg-[linear-gradient(90deg,#AC73D966_0%,#4A00C966_100%)] lg:m-10 lg:pt-4 lg:p-8 m-4 pt-1 p-2 rounded-3xl">
@@ -123,7 +129,7 @@ function About() {
                   <br />
                   <span className="text-gray-700">{body}</span>
                 </div>
-                <span className="flex w-max-fit items-center gap-2 hover:text-gray-600 hover:cursor-pointer pt-4">
+                <span className="flex w-max-fit items-center gap-2 hover:text-gray-600 hover:cursor-pointer pt-4" onClick={()=>onClick(title)}>
                   Read Mode <IconArrowRight size={24} />
                 </span>
               </span>
