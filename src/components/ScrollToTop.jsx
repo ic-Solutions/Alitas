@@ -5,7 +5,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 10) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -18,8 +18,10 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    let element = document.getElementById("nav");
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -29,7 +31,7 @@ const ScrollToTop = () => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       aria-label="Scroll to top"
-      style={{ zIndex: 10 }} // Ensure it's above other content
+      style={{ zIndex: 10 }}
       disabled={!isVisible}
     >
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

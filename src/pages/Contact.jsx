@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
 import { IconMail, IconMapPin } from "@tabler/icons-react";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Contact() {
   const [value, setValue] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -81,6 +82,7 @@ function Contact() {
         ></iframe>
       </div>
       <Footer/>
+      <ScrollToTop />
     </>
   );
 }

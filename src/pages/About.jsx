@@ -15,6 +15,7 @@ import manufacturing from "../assets/aboutUs/industries/manufacturing.png";
 
 import { IconArrowRight } from "@tabler/icons-react";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 const coreValues = [
   {
@@ -131,6 +132,7 @@ function About() {
         </div>
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
