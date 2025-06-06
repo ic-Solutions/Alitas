@@ -3,8 +3,9 @@ import phone0 from "../assets/livePreview/1.png";
 import phone1 from "../assets/livePreview/2.png";
 import phone2 from "../assets/livePreview/3.png";
 import phone3 from "../assets/livePreview/4.png";
+import phone4 from "../assets/livePreview/5.png";
 
-const images = [phone0, phone1, phone2, phone3];
+const images = [phone0, phone1, phone2, phone3, phone4];
 
 const LivePreview = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,7 +64,7 @@ const LivePreview = () => {
               const isRight = index === (currentIndex + 1) % images.length;
               const scale = isMiddle ? "scale-110" : "scale-90";
               const zIndex = isMiddle ? "z-10" : "z-0";
-              const opacity = isLeft || isRight ? "opacity-75" : "opacity-100";
+              const opacity = isMiddle ? "opacity-100" : "opacity-75";
 
               return (
                 <img
