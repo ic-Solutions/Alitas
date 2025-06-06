@@ -3,9 +3,9 @@ import Navbar from "./Navbar";
 import RotatingText from "../util/RotatingText";
 
 import HeroBackground from "../assets/hero_section_bg.png";
-import upcoming from "../assets/rtrt.png";
-import quickAccess from "../assets/quick_access_new.png";
-import language from "../assets/language.png";
+import upcoming from "../assets/Hero assets/rtrt.png";
+import quickAccess from "../assets/Hero assets/quick_access_new.png";
+import language from "../assets/Hero assets/Languages.png";
 import mobileFeatures from "../assets/mobile features.png";
 import heroVideo from "../assets/Hero assets/Hero video.mp4";
 
