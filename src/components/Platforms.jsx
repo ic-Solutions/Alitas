@@ -1,7 +1,5 @@
-import React from "react";
-
 import deviceImage from "../assets/available.png";
-import phones from "../assets/phones.png";
+import phones from "../assets/platforms/phones.png";
 
 function Platforms() {
   return (
