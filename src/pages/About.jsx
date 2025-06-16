@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "motion/react";
 import Navbar from "../components/Navbar";
 import heroImage from "../assets/aboutUs/heroImage.png";
 
@@ -102,13 +102,13 @@ function About() {
         <div className="flex flex-col gap-8 text-center lg:px-14 py-16 font-[SF-Pro-Display]">
           <h2 className="text-2xl px-4 lg:px-0 pb-8 lg:text-5xl/16 font-bold leading-tight text-gray-900">Our Core Values</h2>
           <div className="flex justify-between flex-wrap">
-            {coreValues.map(({ title, icon, body }) => (
-              <span className="flex flex-col w-[45%] lg:w-1/4 lg:px-8 lg:text-lg text-sm/6 lg:mx-auto leading-[148%] justify-start items-center" key={title}>
+            {coreValues.map(({ title, icon, body },index) => (
+              <motion.span  whileInView={{ scale: 1, transition: { duration: 0.5, delay: index * 0.1 } }} initial={{ scale: 0.9 }} className="flex flex-col w-[45%] lg:w-1/4 lg:px-8 lg:text-lg text-sm/6 lg:mx-auto leading-[148%] justify-start items-center" key={title}>
                 <img src={icon} className="h-[35px] w-[35px] lg:h-[72px] lg:w-[72px] mb-2 lg:mb-8" />
                 <span className="font-[600] text-2xl">{title}</span>
                 <br />
                 <span className="text-gray-600 lg:text-center text-justify mb-8">{body}</span>
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>
@@ -116,8 +116,10 @@ function About() {
           <h2 className="text-2xl px-4 lg:px-0 pb-8 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries We Serve</h2>
           <div className="flex flex-wrap justify-center">
             {industriesWeServe.map(({ title, icon, body }, index) => (
-              <span
-                className="w-full lg:w-1/3 lg:text-lg text-sm/6 leading-[148%] relative lg:p-8 mb-16 items-center text-center flex flex-col lg:items-start lg:text-left justify-between"
+              <motion.span
+                whileInView={{ opacity: 1, transition: { duration: 1, delay: index * 0.1 } }}
+                initial={{ opacity: 0 }}
+                className="w-full lg:w-1/3 lg:text-lg text-sm/6 leading-[148%] relative lg:p-8 mb-16 items-center text-center flex flex-col lg:items-start lg:text-left justify-between shadow hover:bg-gray-50 duration-300 [box-shadow:inset_-14px_0px_0px_10px_white]"
                 key={title}
               >
                 {[0, 1, 3].includes(index) ? <div className="lg:flex border-4 border-black rounded-full w-[30px] h-[30px] hidden absolute right-0 bottom-0 " /> : ""}
@@ -129,10 +131,10 @@ function About() {
                   <br />
                   <span className="text-gray-700">{body}</span>
                 </div>
-                <span className="flex w-max-fit items-center gap-2 hover:text-gray-600 hover:cursor-pointer pt-4" onClick={()=>onClick(title)}>
+                <span className="flex w-max-fit items-center gap-2 hover:text-gray-600 hover:cursor-pointer pt-4" onClick={() => onClick(title)}>
                   Read Mode <IconArrowRight size={24} />
                 </span>
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>

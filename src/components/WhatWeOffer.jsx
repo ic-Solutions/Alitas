@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react";
 
 import offerings from "../assets/whatweoffer/whatweoffer.png";
 import { IconChevronDown } from "@tabler/icons-react";
@@ -51,6 +52,12 @@ high-quality care.`,
 
 function WhatWeOffer() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const bob = {
+    duration: 2,
+    ease: "easeInOut",
+    repeat: Infinity,
+    repeatType: "loop",
+  };
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -65,7 +72,7 @@ function WhatWeOffer() {
         </p> */}
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center my-1 gap-14">
+      <div className="flex flex-col md:flex-row justify-between items-start my-1 gap-14">
         {" "}
         {/* Changed items-center to items-start */}
         {/* Accordion Section */}
@@ -89,9 +96,9 @@ function WhatWeOffer() {
           })}
         </div>
         {/* Image Section */}
-        <div className="lg:w-[55%] w-full transition-transform duration-300">
+        <motion.div animate={{ y: [-80, 0, -80] }} transition={bob} className="lg:w-[55%] w-full transition-transform duration-300 sticky top-20">
           <img src={offerings} alt="Overcoming Language Barriers" className="w-full object-contain z-10 transition-all duration-500" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

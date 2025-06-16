@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import phone0 from "../assets/livePreview/1.png";
 import phone1 from "../assets/livePreview/2.png";
 import phone2 from "../assets/livePreview/3.png";
@@ -34,15 +35,12 @@ const LivePreview = () => {
   return (
     <>
       <div className="text-center lg:px-14 font-[SF-Pro-Display]" id="live-preview">
-        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">
-          Real-time Access. Efficient Workflow. Superior Care.
-        </h1>
+        <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Real-time Access. Efficient Workflow. Superior Care.</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
-          Alitas AI comes in-built with single sign-on (SSO), enabling easy and uninterrupted access to Alitas anytime, anywhere. Our round-the-clock
-          language interpretation tool helps providers reduce wait times and deliver real-time, superior-quality patient care.
+          Alitas AI comes in-built with single sign-on (SSO), enabling easy and uninterrupted access to Alitas anytime, anywhere. Our round-the-clock language interpretation tool helps providers
+          reduce wait times and deliver real-time, superior-quality patient care.
           <br />
-          Healthcare providers can quickly access appointment schedules, patient feedback, and consultation summaries—all in a single place, at their
-          convenience.
+          Healthcare providers can quickly access appointment schedules, patient feedback, and consultation summaries—all in a single place, at their convenience.
         </p>
         {/* Scrollable image container for mobile using Grid */}
         {isMobile && (
@@ -57,7 +55,7 @@ const LivePreview = () => {
 
         {/* Image container for desktop */}
         {!isMobile && (
-          <div className="flex justify-center mt-2 gap-10 lg:py-10">
+          <div className="flex justify-center mt-2 gap-8 lg:py-10">
             {images.map((img, index) => {
               const isMiddle = index === currentIndex;
               const isLeft = index === (currentIndex - 1 + images.length) % images.length;
@@ -67,7 +65,9 @@ const LivePreview = () => {
               const opacity = isMiddle ? "opacity-100" : "opacity-75";
 
               return (
-                <img
+                <motion.img
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: isMiddle ? 1 : 0.75, transition: { delay: index * 0.1 } }}
                   key={index}
                   src={img}
                   alt={`Preview ${index + 1}`}
@@ -83,10 +83,7 @@ const LivePreview = () => {
         )}
         {/* Arrows and dots */}
         <div className="flex items-center justify-center space-x-5 mt-2">
-          <button
-            className="w-12 h-12 rounded-full border border-purple-600 flex items-center justify-center text-purple-600 hover:bg-purple-100 transition"
-            onClick={prevImage}
-          >
+          <button className="w-12 h-12 rounded-full border border-purple-600 flex items-center justify-center text-purple-600 hover:bg-purple-100 transition" onClick={prevImage}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -100,10 +97,7 @@ const LivePreview = () => {
             </div>
           )}
 
-          <button
-            className="w-12 h-12 rounded-full border border-purple-600 flex items-center justify-center text-purple-600 hover:bg-purple-100 transition"
-            onClick={nextImage}
-          >
+          <button className="w-12 h-12 rounded-full border border-purple-600 flex items-center justify-center text-purple-600 hover:bg-purple-100 transition" onClick={nextImage}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

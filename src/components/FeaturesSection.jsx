@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
-import feature1 from "../assets/Feature1.png";
+import { motion } from "motion/react";
+
+import bg1 from "../assets/features/bg1.png";
+import s1mobile from "../assets/features/section1mob.png";
 
 import bg2 from "../assets/features/bg2.png";
 import s2mobile from "../assets/features/section2mob.png";
@@ -9,6 +12,7 @@ import bg3 from "../assets/features/bg3.png";
 import s3mobile from "../assets/features/section3mob.png";
 import s3tab from "../assets/features/section3tab.png";
 
+const featureImages1 = [{ src: s1mobile, orientation: "portrait" }];
 const featureImages2 = [
   { src: s2mobile, orientation: "portrait" },
   { src: s2tab, orientation: "landscape" },
@@ -21,6 +25,7 @@ const featureImages3 = [
 ];
 
 const FeaturesSection = () => {
+  const sliderRef1 = useRef(null);
   const sliderRef2 = useRef(null);
   const sliderRef3 = useRef(null);
 
@@ -50,6 +55,7 @@ const FeaturesSection = () => {
     };
 
     const timeouts = [
+      { images: featureImages1, ref: sliderRef1 },
       { images: featureImages2, ref: sliderRef2 },
       { images: featureImages3, ref: sliderRef3 },
     ].map((set) => {
@@ -81,8 +87,23 @@ const FeaturesSection = () => {
             Begin enhancing your communication today.
           </p>
         </div>
-        <div className="rounded-[36px] lg:w-1/2 w-full">
-          <img src={feature1} alt="Device" className="object-contain max-w-[90%] mx-auto" />
+        <div className="rounded-[36px] lg:w-1/2 w-full overflow-hidden" style={{ backgroundImage: `url(${bg1})`, backgroundSize: "cover" }}>
+          <div className="relative w-full aspect-square bg-cover">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div ref={sliderRef1} className="flex transition-transform duration-500 items-center" style={{ width: `100%`, height: "100%" }}>
+                {featureImages1.map((image, index) => (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1, transition: { duration: 0.3, ease: "easeOut" } }}
+                    key={index}
+                    className="flex w-[100%] h-[100%] flex-shrink-0 items-center justify-center p-8"
+                  >
+                    <img src={image.src} alt={`Device ${index + 1}`} className={`object-contain ${image.orientation === "portrait" ? "h-full" : "w-full"}`} style={{ objectPosition: "top" }} />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -228,8 +228,8 @@ function IndustriesWeServe() {
           <div ref={tabIndicatorRef} className="absolute bottom-0 left-0 h-1 bg-purple-600 transition-all duration-300 z-10 hidden lg:block"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between lg:my-10 my-5">
-          <div className="lg:w-1/2">
+        <div className="flex flex-col lg:flex-row justify-between align-start lg:my-10 my-5">
+          <div className="lg:w-1/2 lg:sticky lg:top-10 h-[max-content]">
             <img src={industriesImages[industries.findIndex((ele) => ele === activeTab)]} alt={`alitas in ${activeTab}`} className="rounded-[20px] shadow-md w-full object-cover" />
           </div>
           <div className="w-full lg:w-1/2 lg:pl-10 pt-8 lg:text-left text-center">{renderTabContent()}</div>

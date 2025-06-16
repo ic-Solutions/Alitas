@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import RotatingText from "../util/RotatingText";
+import { motion } from "motion/react";
 
 import HeroBackground from "../assets/hero_section_bg.png";
 import upcoming from "../assets/Hero assets/rtrt.png";
@@ -8,12 +9,32 @@ import quickAccess from "../assets/Hero assets/quick_access_new.png";
 import language from "../assets/Hero assets/Languages.png";
 import mobileFeatures from "../assets/mobile features.png";
 import heroVideo from "../assets/Hero assets/Hero video.mp4";
+import MorphText from "../util/MorphText";
 
-const textItems = [
+const textItemss = [
+  "Enhancing Healthcare by Breaking Language Barriers",
   "Mejorar la Salud Rompiendo Barreras de Idioma", //spanish
-  "Améliorer la Santé en Brisant les Barrières Linguistiques", //french
+  // "Améliorer la Santé en Brisant les Barrières Linguistiques", //french
   "Zorg Verbeteren door Taalbarrières te Doorbreken", //dutch
 ];
+
+const textItems = [
+  // "تعزيز الرعاية الصحية عن طريق كسر الحواجز اللغوية",
+  // "消除語言障礙以提升醫療服務",
+  "Unapređenje zdravstvene zaštite uklanjanjem jezičnih barijera",
+  "Βελτίωση της υγειονομικής περίθαλψης μέσω της άρσης γλωσσικών φραγμών",
+  // "भाषाई बाधाओं को तोड़कर स्वास्थ्य सेवा को बेहतर बनाना",
+  "Meningkatkan layanan kesehatan dengan menghapus hambatan bahasa",
+  "Migliorare l’assistenza sanitaria abbattendo le barriere linguistiche",
+  // "언어 장벽을 허물어 의료 서비스를 향상시키기"
+];
+
+const bob = {
+  duration: 2,
+  ease: "easeInOut",
+  repeat: Infinity,
+  repeatType: "loop",
+};
 
 function HeroSection() {
   const videoRef = useRef(null);
@@ -40,14 +61,15 @@ function HeroSection() {
         <nav className="my-6 font-[SF-Pro-Display] w-full bg-white lg:rounded-3xl rounded-full" style={{ paddingInline: "0.02rem" }} id="nav">
           <Navbar />
         </nav>
-        <div className="lg:mx-[15%] mx-1 text-center lg:pt-10 pt-5">
+        <div className="lg:mx-[5%] mx-1 text-center lg:pt-10 pt-5">
           <h1 className="text-lg sm:text-5xl md:text-6xl lg:text-4xl font-[700] font-[SF Pro Display] leading-[138%] text-[#1F1F1F] mb-6">
             {" "}
             <p className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</p>
-            <p>Enhancing Healthcare by Breaking Language Barriers</p>
+            {/* <p>Enhancing Healthcare by Breaking Language Barriers</p>
             <p className="lg:whitespace-nowrap line-clamp-2 overflow-clip">
               <RotatingText items={textItems} cursor={true} typingInterval={50} />
-            </p>
+            </p> */}
+            <MorphText texts={textItems} />
           </h1>
           {/* <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl/22 font-[700] font-[SF Pro Display] leading-tight text-[#1F1F1F] mb-6">
             <span className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</span>– Enhancing Healthcare by
@@ -64,13 +86,31 @@ function HeroSection() {
         {/* Effects around Video */}
         <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center max-w-7xl mx-auto">
           {/* Upcoming - Top Left */}
-          <img src={upcoming} alt="Upcoming" className="hidden lg:block absolute left-0 top-5 max-w-[23.5%] drop-shadow-lg rounded-3xl object-contain z-20" />
+          <motion.img
+            animate={{ y: [-3, 0, -3] }}
+            transition={bob}
+            src={upcoming}
+            alt="Upcoming"
+            className="hidden lg:block absolute left-0 top-5 max-w-[23.5%] drop-shadow-lg rounded-3xl object-contain z-20"
+          />
 
           {/* Languages - Mid Right */}
-          <img src={language} alt="Languages" className="hidden lg:block absolute right-20 top-10 max-w-[17.5%] drop-shadow-lg rounded-3xl object-contain z-20" />
+          <motion.img
+            animate={{ y: [0, -3, 0] }}
+            transition={{ ...bob, duration: 1.5 }}
+            src={language}
+            alt="Languages"
+            className="hidden lg:block absolute right-20 top-10 max-w-[17.5%] drop-shadow-lg rounded-3xl object-contain z-20"
+          />
 
           {/* Quick Access - Bottom Left */}
-          <img src={quickAccess} alt="Quick Access" className="hidden lg:block absolute left-0 top-50 max-w-[23.75%] drop-shadow-lg rounded-3xl object-contain z-20" />
+          <motion.img
+            animate={{ y: [0, -3, 0] }}
+            transition={bob}
+            src={quickAccess}
+            alt="Quick Access"
+            className="hidden lg:block absolute left-0 top-50 max-w-[23.75%] drop-shadow-lg rounded-3xl object-contain z-20"
+          />
         </div>
         {/* Main Video Section */}
         <div className="relative bg-[#efe8fc] rounded-[20px] overflow-hidden drop-shadow-2xl w-full max-w-[759px] aspect-video z-10 m-auto">
@@ -91,13 +131,25 @@ function HeroSection() {
         {/* Effects around Video */}
         <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center mx-auto">
           {/* Upcoming - Top Left */}
-          <img src={upcoming} alt="Upcoming" className="absolute left-6 top-[-76px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20" />
+          <motion.img animate={{ y: [-1, 0, -1] }} transition={bob} src={upcoming} alt="Upcoming" className="absolute left-6 top-[-76px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20" />
 
           {/* Quick Access - Top Right */}
-          <img src={quickAccess} alt="Quick Access" className="absolute right-6 top-[-94px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20" />
+          <motion.img
+            animate={{ y: [0, -1, 0] }}
+            transition={bob}
+            src={quickAccess}
+            alt="Quick Access"
+            className="absolute right-6 top-[-94px] max-w-[150px] drop-shadow-lg rounded-sm object-contain z-20"
+          />
 
           {/* More Features - Bottom */}
-          <img src={mobileFeatures} alt="Mobile Features" className="absolute right-6 bottom-[-280px] max-w-[300px] drop-shadow-lg rounded-sm object-contain z-20" />
+          <motion.img
+            animate={{ y: [-1, 0, -1] }}
+            transition={{ ...bob, duration: 1.5 }}
+            src={mobileFeatures}
+            alt="Mobile Features"
+            className="absolute right-6 bottom-[-280px] max-w-[300px] drop-shadow-lg rounded-sm object-contain z-20"
+          />
         </div>
         {/* Main Video Section */}
         <div className="relative bg-[#efe8fc] rounded-xl overflow-hidden drop-shadow-2xl w-full max-w-[80%] aspect-video z-10 m-auto">
