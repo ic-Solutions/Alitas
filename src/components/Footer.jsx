@@ -2,8 +2,10 @@ import React from "react";
 import { MdEmail } from "react-icons/md";
 import { FaDiscord, FaYoutube, FaTiktok, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import icon from "../assets/icon.png";
+import { Link, useNavigate } from "react-router";
 
 const Footer = () => {
+  const navigate = useNavigate();
   const icons = [
     { icon: <MdEmail />, href: "#" },
     // { icon: <FaDiscord />, href: "#" },
@@ -13,6 +15,10 @@ const Footer = () => {
     // { icon: <FaFacebook />, href: "#" },
     { icon: <FaLinkedin />, href: "#" },
   ];
+
+  const onClick = (industry) => {
+    navigate(`/?tab=${encodeURIComponent(industry)}#solutions`);
+  };
 
   return (
     <div className="bg-[#EFEFFB] text-gray-700 py-10 px-4 sm:px-6 lg:px-10">
@@ -26,11 +32,7 @@ const Footer = () => {
           <p className="mt-6 font-semibold text-base leading-relaxed">Subscribe to our newsletter for the latest updates on features and releases.</p>
           <div className="flex flex-row items-start mt-6 lg:gap-4 gap-2 w-full">
             <div className="flex">
-              <input
-                type="email"
-                placeholder="Email address"
-                className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none w-[100%]"
-              />
+              <input type="email" placeholder="Email address" className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none w-[100%]" />
             </div>
             <div className="flex">
               <button className="text-(--color-primary) border border-(--color-primary) lg:px-4 p-2 rounded-full font-semibold hover:text-white hover:bg-(--color-primary) hover:cursor-pointer">
@@ -38,9 +40,7 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <p className="lg:text-sm mt-2 text-gray-600 text-xs lg:w-full w-3/4">
-            By subscribing, you consent to our Privacy Policy and receive updates.
-          </p>
+          <p className="lg:text-sm mt-2 text-gray-600 text-xs lg:w-full w-3/4">By subscribing, you consent to our Privacy Policy and receive updates.</p>
         </div>
 
         {/* Right Section */}
@@ -49,11 +49,11 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-5">Solutions</h3>
             <ul className="space-y-4">
-              <li>Healthcare</li>
-              <li>Immigration</li>
-              <li>Tourism</li>
-              <li>Finance</li>
-              <li>Manufacturing</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Healthcare")}>Healthcare</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Immigration")}>Immigration</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Tourism")}>Tourism</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Finance")}>Finance</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Manufacturing")}>Manufacturing</li>
             </ul>
           </div>
 
@@ -70,8 +70,12 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-5">Company</h3>
             <ul className="space-y-4">
-              <li>About Us</li>
-              <li>Contact Us</li>
+              <li onClick={() => navigate("/about-us")} className="w-[max-content] cursor-pointer hover:text-black">
+                About Us
+              </li>
+              <li onClick={() => navigate("/contact-us")} className="w-[max-content] cursor-pointer hover:text-black">
+                Contact Us
+              </li>
             </ul>
           </div>
         </div>
@@ -128,13 +132,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="flex justify-center gap-2 text-lg text-white flex-wrap">
             {icons.map(({ icon, href }, idx) => (
-              <a
-                key={idx}
-                href={href}
-                className="bg-(--color-primary) p-3 rounded-full hover:bg-purple-700 transition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a key={idx} href={href} className="bg-(--color-primary) p-3 rounded-full hover:bg-purple-700 transition" target="_blank" rel="noopener noreferrer">
                 {icon}
               </a>
             ))}

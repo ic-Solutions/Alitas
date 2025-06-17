@@ -1,11 +1,10 @@
 // src/components/Navbar.jsx
 
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useState } from "react";
 import icon from "../assets/icon.png";
 
 import { IconMenu2, IconKey, IconX } from "@tabler/icons-react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const Navbar = ({ activeTab = "" }) => {
   // const [activeTab, setActiveTab] = useState("#home");
@@ -13,10 +12,7 @@ const Navbar = ({ activeTab = "" }) => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const navigate = (id) => {
-    let element = document.getElementById(id.slice(1));
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
 
   return (
     // my-6 px-4 md:px-10 lg:px-24 font-[SF-Pro-Display]
@@ -33,7 +29,7 @@ const Navbar = ({ activeTab = "" }) => {
         <div className="hidden md:flex space-x-10 items-center text-lg">
           <span
             key={"#platform"}
-            onClick={() => navigate("#platform")}
+            onClick={() => navigate("/#platform")}
             className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
               activeTab === "#platform" ? "hover:text-stone-950 font-bold " : ""
             }`}
@@ -43,8 +39,7 @@ const Navbar = ({ activeTab = "" }) => {
           </span>
           <NavLink
             key={"#solutions"}
-            to="/"
-            onClick={() => navigate("#solutions")}
+            to="/#solutions"
             className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
               activeTab === "#solutions" ? "hover:text-stone-950 font-bold " : ""
             }`}
@@ -96,7 +91,7 @@ const Navbar = ({ activeTab = "" }) => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0">
+        <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0 z-10">
           <span
             key={"#platform"}
             onClick={() => {
@@ -109,9 +104,8 @@ const Navbar = ({ activeTab = "" }) => {
           </span>
           <NavLink
             key={"#solutions"}
-            to="/"
+            to="/#solutions"
             onClick={() => {
-              navigate("#solutions");
               setMenuOpen(false);
             }}
             className={`text-lg ${activeTab === "#solutions" ? "text-purple-500" : "text-gray-800"}`}
