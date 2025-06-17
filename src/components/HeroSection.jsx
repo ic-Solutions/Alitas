@@ -65,8 +65,8 @@ function HeroSection() {
           <h1 className="text-lg sm:text-5xl md:text-6xl lg:text-4xl font-[700] font-[SF Pro Display] leading-[138%] text-[#1F1F1F] mb-6">
             {" "}
             <p className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</p>
-            {/* <p>Enhancing Healthcare by Breaking Language Barriers</p>
-            <p className="lg:whitespace-nowrap line-clamp-2 overflow-clip">
+            <p className=" hidden lg:block">Enhancing Healthcare by Breaking Language Barriers</p>
+            {/*<p className="lg:whitespace-nowrap line-clamp-2 overflow-clip">
               <RotatingText items={textItems} cursor={true} typingInterval={50} />
             </p> */}
             <MorphText texts={textItems} />
