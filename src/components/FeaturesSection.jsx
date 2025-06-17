@@ -28,15 +28,21 @@ const FeaturesSection = () => {
   const sliderRef1 = useRef(null);
   const sliderRef2 = useRef(null);
   const sliderRef3 = useRef(null);
+  const timeouts = useRef([]);
 
   useEffect(() => {
+    function setTrackedTimeout(fn, delay) {
+      const id = window.setTimeout(fn, delay);
+      timeouts.current.push(id);
+      return id;
+    }
     const goto = async (location, speed, ref) => {
       ref.current.style.transitionDuration = speed;
       void ref.current.offsetWidth;
       ref.current.style.transform = `translateX(-${location * 100}%)`;
 
       const durationInMs = parseInt(speed);
-      await new Promise((resolve) => setTimeout(resolve, durationInMs));
+      await new Promise((resolve) => setTrackedTimeout(resolve, durationInMs));
     };
 
     const shiftSlide = async (currentIndex, images, ref) => {
@@ -44,27 +50,26 @@ const FeaturesSection = () => {
       await goto(currentIndex, "500ms", ref);
       if (currentIndex === images.length - 1) {
         await goto(0, "0ms", ref);
-        setTimeout(() => {
+        setTrackedTimeout(() => {
           shiftSlide(currentIndex, images, ref);
         }, 0);
       } else {
-        setTimeout(() => {
+        setTrackedTimeout(() => {
           shiftSlide(currentIndex, images, ref);
         }, 3000);
       }
     };
 
-    const timeouts = [
+    const slides = [
       { images: featureImages1, ref: sliderRef1 },
       { images: featureImages2, ref: sliderRef2 },
       { images: featureImages3, ref: sliderRef3 },
     ].map((set) => {
-      setTimeout(() => shiftSlide(0, set.images, set.ref), 3000);
+      setTrackedTimeout(() => shiftSlide(0, set.images, set.ref), 3000);
     });
     return () => {
-      timeouts.map((timeout) => {
-        clearTimeout(timeout);
-      });
+      timeouts.current.forEach((id) => clearTimeout(id));
+      timeouts.current = [];
     };
   }, []);
 
