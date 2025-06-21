@@ -7,15 +7,15 @@ import { IconChevronDown } from "@tabler/icons-react";
 const offeringsList = [
   {
     heading: "Overcome Language Barriers. Elevate Patient Care.",
-    body: `Clear communication is essential in healthcare, yet existing language barriers can result in ineffective care, unnecessary costs, significant health complications. Alitas AI eliminates these challenges by providing accurate, real-time translations—24/7.
-    <br/>Engineered to secure healthcare communication and make it seamless, Alitas prioritises patient care and privacy like never before. Experience its faster and high-quality care—right at your fingertips.`,
+    body: `Clear communication is essential in healthcare, yet existing language barriers can result in ineffective care, unnecessary costs, significant health complications. Alitas AI eliminates these challenges by providing accurate, real-time translations 24/7.
+    <br/>Engineered to secure healthcare communication and make it seamless, Alitas prioritises patient care and privacy like never before. Experience its faster and high-quality care, right at your fingertips.`,
   },
   {
     heading: "Internationally Compliant Security and Privacy Standards",
     body: `<b>At Alitas</b>, patient privacy is at the core of everything we do. Our platform values patient
 privacy by adhering to global data protection protocols, alongside meeting regional
 healthcare privacy regulations. Knowing how sensitive a patient’s healthcare data is, Alitas
-does not store any patient data—commanding the trust of patient and healthcare providers
+does not store any patient data, commanding the trust of patient and healthcare providers
 across the globe. With Alias, patient-provider interaction remains private and secure around
 the clock.`,
   },
@@ -26,7 +26,7 @@ and the patient is a key factor in thousands of preventable deaths annually. Ali
 resolves these challenges with its in-built specialized medical vocabulary to ensure accurate
 and context-driven translation in patient-provider communication. This helps Alitas in
 bridging language gaps between healthcare providers and patients and minimising scope of
-diagnostic errors—providing safer and high-quality care.
+diagnostic errors by providing safer and high-quality care.
 `,
   },
   {
@@ -35,7 +35,7 @@ diagnostic errors—providing safer and high-quality care.
 the patient-provider communication. Alitas AI addresses the need for instant language
 translation by providing round-the-clock multilingual support. With Alitas, communication
 between healthcare providers and patients is instant and effortless. Language is no longer a
-barrier to timely and effective treatment—enabling healthcare providers to render superior
+barrier to timely and effective treatment, enabling healthcare providers to render superior
 and inclusive care anytime, anywhere.
 `,
   },

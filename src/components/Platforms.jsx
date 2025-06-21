@@ -40,7 +40,7 @@ function Platforms() {
               <br /> Get in touch now!
             </h1>
             <p className="text-gray-700 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
-              Alitas AI enables healthcare providers to minimize wait times and render high quality patient care—marking a step forward in the
+              Alitas AI enables healthcare providers to minimize wait times and render high quality patient care, marking a step forward in the
               healthcare ecosystem like never before. By breaking down language barriers, Alitas allows real-time, seamless communication 24/7, paving
               the way for faster, better, and holistic patient care.
             </p>

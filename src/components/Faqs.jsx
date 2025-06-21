@@ -8,14 +8,14 @@ const faqs = [
     answer: `<b>Alitas AI</b> is simple and easy to navigate. With <b>Single Sign-On (SSO)</b> support, healthcare
 providers and clinicians can seamlessly connect the app with their existing systems.
 Designed with a user-friendly approach, the onboarding process is <b>simple and
-hassle-free</b>—requiring no complex configuration or lengthy installation process.<br/>
+hassle-free,</b> requiring no complex configuration or lengthy installation process.<br/>
 Traditional software rollouts can take weeks or months to set up and function fully. With
 <b>Alitas AI</b>, healthcare providers and clinicians can use the app within a few days. Our
 experienced support team ensures that users have a seamless experience, providing
 hands-on assistance every step of the way to help you utilise the app to its fullest potential
 from day one.<br/>
 Experience faster deployment, limited downtime, and instant access to real-time language
-support and communication tools –- supported by <b>Alitas AI’s streamlined onboarding
+support and communication tools, supported by <b>Alitas AI’s streamlined onboarding
 process</b>.`,
   },
   {
@@ -34,7 +34,7 @@ region, meeting the highest data protection and security standards.`,
     question: "4. How does this tool help in reducing wait time?",
     answer: `Receiving prompt medical care remains a challenge for non-native speakers, asylum
 seekers, and refugees. Traditional consultations frequently create a need for availability of
-interpreters, resulting in delay in diagnosis, treatment, and unexpected wait times — more so
+interpreters, resulting in delay in diagnosis, treatment, and unexpected wait times, more so
 in emergencies when every second counts.<br/>
 With <b>Alitas AI</b>, patients can get diagnosed and treated round-the-clock without waiting for a
 third-party interpreter. Our instant language translation platform enables clear
@@ -62,9 +62,8 @@ const Faqs = () => {
       <div className="text-center lg:px-4 lg:pb-16 pb-12">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Frequently Asked Questions</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[80%] mx-auto">
-          Scan through our <b>FAQs</b> to gain clarity and thorough understanding of how <b>Alitas AI</b> can help you lower wait times, improve
-          patient health outcomes, and overcome language barriers. Know more about the ways in which our app enables healthcare providers to deliver
-          seamless, high-quality care—at all times. <br />
+          Scan through our <b>FAQs</b> to gain clarity and thorough understanding of how <b>Alitas AI</b> can help you lower wait times, improve patient health outcomes, and overcome language
+          barriers. Know more about the ways in which our app enables healthcare providers to deliver seamless, high-quality care, at all times. <br />
           <b>Learn how we can make a difference — have a look at our FAQs now!</b>
         </p>
       </div>
@@ -83,11 +82,7 @@ const Faqs = () => {
                 <IconPlus />
               </span>
             </div>
-            <div
-              className={`px-4 text-sm sm:text-base overflow-hidden transition-all duration-300 ${
-                activeIndex === index ? "max-h-[100%] opacity-100 mt-1 pb-4" : "max-h-0 opacity-0 mt-0 pb-0"
-              }`}
-            >
+            <div className={`px-4 text-sm sm:text-base overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-[100%] opacity-100 mt-1 pb-4" : "max-h-0 opacity-0 mt-0 pb-0"}`}>
               <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
             </div>
           </div>

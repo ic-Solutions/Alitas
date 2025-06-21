@@ -70,7 +70,7 @@ function IndustriesWeServe() {
           <>
             <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
             <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
-              With real-time, medically precise translation available at all times, healthcare providers and clinicians can prioritise the ultimate goal—providing superior care and improving patient
+              With real-time, medically precise translation available at all times, healthcare providers and clinicians can prioritise the ultimate goal, providing superior care and improving patient
               experiences.
             </p>
             <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
@@ -99,7 +99,7 @@ function IndustriesWeServe() {
           <>
             <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
             <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
-              With real-time language translation, immigration officials can strategically focus on their core responsibility — delivering high-quality and personalised guidance to each applicant.
+              With real-time language translation, immigration officials can strategically focus on their core responsibility, delivering high-quality and personalised guidance to each applicant.
             </p>
             <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
             <ul className="mt-6 space-y-2">
@@ -124,7 +124,7 @@ function IndustriesWeServe() {
           <>
             <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
             <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
-              By enabling seamless communication, tourism enterprises can prioritise what truly matters — delivering authentic, transformative experiences that creates a newfound appreciation for
+              By enabling seamless communication, tourism enterprises can prioritise what truly matters, delivering authentic, transformative experiences that creates a newfound appreciation for
               local culture among travellers.
             </p>
             <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
@@ -206,8 +206,8 @@ function IndustriesWeServe() {
       <div className="text-center mt-12 px-4 sm:px-8">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">Industries We Serve</h1>
         <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 lg:max-w-[80%] mx-auto">
-          Alitas AI is presently accessible by healthcare providers and clinicians, providing instant and accurate language support—strengthening doctor-patient communication. Moving forward, we are
-          working towards extending our platform’s capabilities to diverse industries—namely, legal, immigration, and customer support—where precision in multilingual interaction is just as crucial.
+          Alitas AI is presently accessible by healthcare providers and clinicians, providing instant and accurate language support, strengthening doctor-patient communication. Moving forward, we are
+          working towards extending our platform’s capabilities to diverse industries—namely, legal, immigration, and customer support, where precision in multilingual interaction is just as crucial.
         </p>
       </div>
 

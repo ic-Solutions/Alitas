@@ -86,7 +86,7 @@ const FeaturesSection = () => {
           </p>
           <p className="text-sm/6 lg:text-base/7 mt-6 text-gray-500 max-w-xl px-4 lg:px-0 lg:text-left text-justify">
             <b>Alitas AI</b> provides effortless and uninterrupted, instant translation on-the-spot 24/7 to facilitate seamless communication between healthcare providers and patients. Fuelled by
-            cutting-edge AI, the platform offers accurate translations of words, sentences, and full-fledged conversations—guaranteeing seamless and confident conversations on both ends.
+            cutting-edge AI, the platform offers accurate translations of words, sentences, and full-fledged conversations, guaranteeing seamless and confident conversations on both ends.
             <br />
             Improve patient satisfaction, significantly decrease wait time, and ensure high-quality care with 24/7 accurate medical translation. <br />
             Begin enhancing your communication today.
@@ -125,7 +125,7 @@ const FeaturesSection = () => {
             <br />
             By breaking language barriers, Alitas AI enables healthcare providers to make high-quality, compassionate care more accessible.
             <br />
-            Take your patient care to the next level by breaking down communication barriers<b>—witness the power of Alitas today.</b>
+            Take your patient care to the next level by breaking down communication barriers, <b>witnessing the power of Alitas today.</b>
           </p>
         </div>
         <div className="rounded-[36px] lg:w-1/2 w-full overflow-hidden" style={{ backgroundImage: `url(${bg2})`, backgroundSize: "cover" }}>
