@@ -3,11 +3,12 @@ import { FaYoutube, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import icon from "../assets/icon.png";
 import { useNavigate } from "react-router";
 
+// Generic footer, subscription field is controlled, links under platform yet to be assigned
 const Footer = () => {
   const navigate = useNavigate();
   const icons = [
     { icon: <MdEmail />, href: "#" },
-    // { icon: <FaDiscord />, href: "#" },
+    // { icon: <FaDiscord />, href: "#" }, //import these icons from react-icons if being used
     { icon: <FaXTwitter />, href: "#" },
     { icon: <FaYoutube />, href: "#" },
     // { icon: <FaTiktok />, href: "#" },
@@ -16,6 +17,7 @@ const Footer = () => {
   ];
 
   const onClick = (industry) => {
+    // navigates to IndustriesWeServe section on the home page with an added query parameter "tab", tab is parsed by IndustriesWeServe
     navigate(`/?tab=${encodeURIComponent(industry)}#solutions`);
   };
 
@@ -34,6 +36,7 @@ const Footer = () => {
               <input type="email" placeholder="Email address" className="border border-purple-600 rounded-full lg:px-4 p-2 focus:outline-none w-[100%]" />
             </div>
             <div className="flex">
+              {/* temporary submit button that does nothing */}
               <button className="text-(--color-primary) border border-(--color-primary) lg:px-4 p-2 rounded-full font-semibold hover:text-white hover:bg-(--color-primary) hover:cursor-pointer">
                 Subscribe
               </button>

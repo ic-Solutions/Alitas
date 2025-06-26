@@ -9,20 +9,24 @@ import { useLocation, useNavigate } from "react-router";
 const industries = ["Healthcare", "Immigration", "Tourism", "Finance", "Manufacturing"];
 const industriesImages = [healthcareImg, immigrationImg, tourismImg, financeImg, manufacturingImg];
 
+// component maintains a custom tabs like component, contents of tab are conditionally rendered
 function IndustriesWeServe() {
   const [activeTab, setActiveTab] = useState("Healthcare");
-  const tabIndicatorRef = useRef(null);
+  const tabIndicatorRef = useRef(null); // state needed to manage the animated accent under active tab - Desktop only
   const tabsContainerRef = useRef(null);
   const sectionRef = useRef(null);
 
   const location = useLocation();
   const navigate = useNavigate();
 
+  // if current url has additional parameters that instruct this component to go to a slide, clear them
   useEffect(() => {
     if (!location.search && !location.hash) return;
 
     if (location.hash === "#solutions") {
+      // clears the #solutions
       const tid = setTimeout(() => {
+        // DO NOT REMOVE, allows the page a section to mount component fully and then does the clearing
         navigate(location.pathname, { replace: true });
       }, 500);
 
@@ -30,7 +34,9 @@ function IndustriesWeServe() {
     }
 
     if (location.search) {
+      /// clears the query parameters
       const tid2 = setTimeout(() => {
+        // DO NOT REMOVE, allows the page a section to mount component fully and then does the clearing
         navigate(location.pathname, { replace: true });
       }, 500);
 
@@ -38,6 +44,7 @@ function IndustriesWeServe() {
     }
   }, [location, navigate]);
 
+  // checks the url for query parameters that might request a certain slide, scrolls to this component if needed and sets the activeTab state
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const requested = params.get("tab");
@@ -51,6 +58,7 @@ function IndustriesWeServe() {
     }
   }, [location.hash, location.search]);
 
+  // modifies the active tab accent's position whenever active tab changes.
   useEffect(() => {
     const activeEl = tabsContainerRef.current.querySelector(".tab-button.active");
     if (activeEl && tabIndicatorRef.current) {
@@ -63,6 +71,7 @@ function IndustriesWeServe() {
     setActiveTab(tab);
   };
 
+  // simple (but extensive) switch case that renders the contents of the active tab
   const renderTabContent = () => {
     switch (activeTab) {
       case "Healthcare":
@@ -83,14 +92,19 @@ function IndustriesWeServe() {
                 "Strengthened provider-patient relationships – Direct communication regardless of patient’s linguistic background, building trust and confidence on mutual ends.".split(" – "),
                 "Single-minded focus from your doctor – Eliminating disruptions, providing high-quality care.".split(" – "),
                 "Lowering scope of misdiagnosis – Instant and precise translation results in effective clinical treatment.".split(" – "),
-              ].map((txt, i) => (
-                <li key={i} className="flex items-center text-left">
-                  <span className="text-purple-600 text-xl mr-4">✔</span>
-                  <p className="text-sm text-gray-500">
-                    <b>{txt[0]}</b> – {txt[1]}
-                  </p>
-                </li>
-              ))}
+              ].map(
+                (
+                  txt,
+                  i // quick workaround to render points from plaintext, too lazy to manually add list elements and bold tags.
+                ) => (
+                  <li key={i} className="flex items-center text-left">
+                    <span className="text-purple-600 text-xl mr-4">✔</span>
+                    <p className="text-sm text-gray-500">
+                      <b>{txt[0]}</b> – {txt[1]}
+                    </p>
+                  </li>
+                )
+              )}
             </ul>
           </>
         );
@@ -124,8 +138,8 @@ function IndustriesWeServe() {
           <>
             <h2 className="text-2xl font-bold text-left">Alitas AI bridges the gap. </h2>
             <p className="text-sm/6 lg:text-lg/7 mt-2 text-gray-500 lg:max-w-[90%] text-left">
-              By enabling seamless communication, tourism enterprises can prioritise what truly matters, delivering authentic, transformative experiences that creates a newfound appreciation for
-              local culture among travellers.
+              By enabling seamless communication, tourism enterprises can prioritise what truly matters, delivering authentic, transformative experiences that creates a newfound appreciation for local
+              culture among travellers.
             </p>
             <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500 text-left">With Alitas, you get:</p>
             <ul className="mt-6 space-y-2">
@@ -225,6 +239,7 @@ function IndustriesWeServe() {
               {tab}
             </button>
           ))}
+          {/* active tab accent - a simple empty div with height 1 */}
           <div ref={tabIndicatorRef} className="absolute bottom-0 left-0 h-1 bg-purple-600 transition-all duration-300 z-10 hidden lg:block"></div>
         </div>
 

@@ -67,6 +67,7 @@ const industriesWeServe = [
 function About() {
   const navigate = useNavigate();
   const onClick = (industry) => {
+    // navigates to IndustriesWeServe section on the home page with an added query parameter "tab", tab is parsed by IndustriesWeServe
     navigate(`/?tab=${encodeURIComponent(industry)}#solutions`);
   };
 
@@ -102,8 +103,13 @@ function About() {
         <div className="flex flex-col gap-8 text-center lg:px-14 py-16 font-[SF-Pro-Display]">
           <h2 className="text-2xl px-4 lg:px-0 pb-8 lg:text-5xl/16 font-bold leading-tight text-gray-900">Our Core Values</h2>
           <div className="flex justify-between flex-wrap">
-            {coreValues.map(({ title, icon, body },index) => (
-              <motion.span  whileInView={{ scale: 1, transition: { duration: 0.5, delay: index * 0.1 } }} initial={{ scale: 0.9 }} className="flex flex-col w-[45%] lg:w-1/4 lg:px-8 lg:text-lg text-sm/6 lg:mx-auto leading-[148%] justify-start items-center" key={title}>
+            {coreValues.map(({ title, icon, body }, index) => (
+              <motion.span
+                whileInView={{ scale: 1, transition: { duration: 0.5, delay: index * 0.1 } }}
+                initial={{ scale: 0.9 }}
+                className="flex flex-col w-[45%] lg:w-1/4 lg:px-8 lg:text-lg text-sm/6 lg:mx-auto leading-[148%] justify-start items-center"
+                key={title}
+              >
                 <img src={icon} className="h-[35px] w-[35px] lg:h-[72px] lg:w-[72px] mb-2 lg:mb-8" />
                 <span className="font-[600] text-2xl">{title}</span>
                 <br />
@@ -122,6 +128,7 @@ function About() {
                 className="w-full lg:w-1/3 lg:text-lg text-sm/6 leading-[148%] relative lg:p-8 mb-16 items-center text-center flex flex-col lg:items-start lg:text-left justify-between shadow hover:bg-gray-50 duration-300 [box-shadow:inset_-14px_0px_0px_10px_white]"
                 key={title}
               >
+                {/* Selective application of borders to render the desired layout, very finicky */}
                 {[0, 1, 3].includes(index) ? <div className="lg:flex border-4 border-black rounded-full w-[30px] h-[30px] hidden absolute right-0 bottom-0 " /> : ""}
                 {[0, 1, 3].includes(index) ? <div className="lg:flex border-2 border-black h-[calc(100%-60px)] hidden absolute right-[13px] top-[15px] " /> : ""}
                 {[0, 1, 2, 3, 4].includes(index) ? <div className="lg:flex border-2 border-black w-[calc(100%-60px)] hidden absolute left-[15px] bottom-[15px] " /> : ""}

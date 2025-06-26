@@ -9,6 +9,7 @@ import ScrollToTop from "../components/ScrollToTop";
 function Contact() {
   const [value, setValue] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
+  // placeholder function to submit form, currently sends and alert and clears the form.
   const submitForm = () => {
     alert("Response Recorded");
     setValue({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -67,6 +68,7 @@ function Contact() {
         </div>
       </div>
       <motion.div whileInView={{ width: "90%", transition: { duration: 0.5 } }} initial={{ width: "0%" }} className="rounded-4xl overflow-hidden lg:mx-auto mb-24">
+        {/* width of iframe has to be set in order to apply tw styling */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2650.256034831251!2d144.94864202256596!3d-37.82041728079252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5a0b11b26d%3A0x558f312ba6ce5067!2sCollins%20Square!5e0!3m2!1sen!2sin!4v1748619661132!5m2!1sen!2sin"
           width="100%"

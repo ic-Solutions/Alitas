@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import { motion } from "motion/react";
 
-
 import HeroBackground from "../assets/heroSection/hero_section_bg.png";
 import upcoming from "../assets/heroSection/rtrt.png";
 import quickAccess from "../assets/heroSection/quick_access_new.png";
@@ -11,17 +10,20 @@ import mobileFeatures from "../assets/heroSection/mobile features.png";
 import heroVideo from "../assets/heroSection/Hero video.mp4";
 import MorphText from "../util/MorphText";
 
+// text items to be cycled between for MorphText
+// elements enabled are best suited across viewports
 const textItems = [
-  // "تعزيز الرعاية الصحية عن طريق كسر الحواجز اللغوية",
-  // "消除語言障礙以提升醫療服務",
-  "Unapređenje zdravstvene zaštite uklanjanjem jezičnih barijera",
-  "Βελτίωση της υγειονομικής περίθαλψης μέσω της άρσης γλωσσικών φραγμών",
-  // "भाषाई बाधाओं को तोड़कर स्वास्थ्य सेवा को बेहतर बनाना",
-  "Meningkatkan layanan kesehatan dengan menghapus hambatan bahasa",
-  "Migliorare l’assistenza sanitaria abbattendo le barriere linguistiche",
-  // "언어 장벽을 허물어 의료 서비스를 향상시키기"
+  // "تعزيز الرعاية الصحية عن طريق كسر الحواجز اللغوية", // animation is LTR, since arabic is RTL, not included
+  // "消除語言障礙以提升醫療服務", // Mandarin
+  "Unapređenje zdravstvene zaštite uklanjanjem jezičnih barijera", // Croatian
+  "Βελτίωση της υγειονομικής περίθαλψης μέσω της άρσης γλωσσικών φραγμών", // Greek
+  // "भाषाई बाधाओं को तोड़कर स्वास्थ्य सेवा को बेहतर बनाना", // Hindi
+  "Meningkatkan layanan kesehatan dengan menghapus hambatan bahasa", // Indonesian
+  "Migliorare l’assistenza sanitaria abbattendo le barriere linguistiche", // Italian
+  // "언어 장벽을 허물어 의료 서비스를 향상시키기" // Korean
 ];
 
+// framer animation for images surrounding the video
 const bob = {
   duration: 2,
   ease: "easeInOut",
@@ -29,11 +31,12 @@ const bob = {
   repeatType: "loop",
 };
 
+// defines two separate sets of items (videos and images) that are responsively rendered
 function HeroSection() {
   const videoRef = useRef(null);
-  const mobileVideoRef = useRef(null);
+  const mobileVideoRef = useRef(null); // separate ref for mobile video
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayingOnMobile, setIsPlayingOnMobile] = useState(false);
+  const [isPlayingOnMobile, setIsPlayingOnMobile] = useState(false);  // separate state for mobile video
 
   const handlePlay = () => {
     if (videoRef.current) {
@@ -41,7 +44,7 @@ function HeroSection() {
       setIsPlaying(true);
     }
   };
-  const handleMobilePlay = () => {
+  const handleMobilePlay = () => {  // separate play function for mobile video
     if (mobileVideoRef.current) {
       mobileVideoRef.current.play();
       setIsPlayingOnMobile(true);
@@ -59,6 +62,7 @@ function HeroSection() {
             {" "}
             <p className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</p>
             <p className=" hidden lg:block">Enhancing Healthcare by Breaking Language Barriers</p>
+            {/* Custom animated component that cycles between given strings, refer to component definition for other properties */}
             <MorphText texts={textItems} />
           </h1>
           <p className="lg:text-lg text-sm/6 lg:max-w-[80%] lg:mx-auto leading-[148%]">
@@ -68,6 +72,7 @@ function HeroSection() {
           </p>
         </div>
       </div>
+      {/* Video and images for desktop view */}
       <div className="relative mt-[-200px] hidden lg:block">
         {/* Effects around Video */}
         <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center max-w-7xl mx-auto">
@@ -113,6 +118,8 @@ function HeroSection() {
           )}
         </div>
       </div>
+
+      {/* Video and images for mobile view */}
       <div className="relative mt-[-125px] lg:hidden pb-10">
         {/* Effects around Video */}
         <div className="relative w-full flex flex-col items-center gap-6 mt-15 px-6 md:px-16 lg:flex-row lg:justify-center lg:items-center mx-auto">

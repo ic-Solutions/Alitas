@@ -1,6 +1,7 @@
 import deviceImage from "../assets/platforms/available.png";
 import phones from "../assets/platforms/phones.png";
 
+// simple and responsive info component, simple changes up flex direction responsively
 function Platforms() {
   return (
     <div className="lg:py-40 py-20 bg-white">
@@ -40,24 +41,15 @@ function Platforms() {
               <br /> Get in touch now!
             </h1>
             <p className="text-gray-700 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
-              Alitas AI enables healthcare providers to minimize wait times and render high quality patient care, marking a step forward in the
-              healthcare ecosystem like never before. By breaking down language barriers, Alitas allows real-time, seamless communication 24/7, paving
-              the way for faster, better, and holistic patient care.
+              Alitas AI enables healthcare providers to minimize wait times and render high quality patient care, marking a step forward in the healthcare ecosystem like never before. By breaking down
+              language barriers, Alitas allows real-time, seamless communication 24/7, paving the way for faster, better, and holistic patient care.
             </p>
             <div className="flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 hidden lg:flex">
               <a href="#">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Get it on Google Play"
-                  className="h-12 md:h-14"
-                />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" className="h-12 md:h-14" />
               </a>
               <a href="#">
-                <img
-                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                  alt="Download on the App Store"
-                  className="h-12 md:h-14"
-                />
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" className="h-12 md:h-14" />
               </a>
             </div>
           </div>
@@ -68,18 +60,10 @@ function Platforms() {
           </div>
           <div className="flex flex-row items-center justify-center lg:justify-start gap-2 lg:hidden">
             <a href="#">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Get it on Google Play"
-                className="h-12 md:h-14"
-              />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" className="h-12 md:h-14" />
             </a>
             <a href="#">
-              <img
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="Download on the App Store"
-                className="h-12 md:h-14"
-              />
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" className="h-12 md:h-14" />
             </a>
           </div>
         </div>

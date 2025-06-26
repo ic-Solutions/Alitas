@@ -1,12 +1,11 @@
-import Footer from "../components/Footer";
-import Faqs from "../components/Faqs";
-
-import LivePreview from "../components/LivePreview";
-import { FeaturesSection } from "../components/FeaturesSection";
 import HeroSection from "../components/HeroSection";
+import FeaturesSection from "../components/FeaturesSection";
+import LivePreview from "../components/LivePreview";
 import WhatWeOffer from "../components/WhatWeOffer";
 import IndustriesWeServe from "../components/IndustriesWeServe";
+import Faqs from "../components/Faqs";
 import Platforms from "../components/Platforms";
+import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {

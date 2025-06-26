@@ -8,18 +8,23 @@ import phone4 from "../assets/livePreview/5.png";
 
 const images = [phone0, phone1, phone2, phone3, phone4];
 
+// similar logic to carousels in FeaturesSection for mobile view
+// simple transition based scrolling/toggling for desktop view
 const LivePreview = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  const [currentIndex, setCurrentIndex] = useState(0); // active image index controlled by buttons on screen
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640); // required to set width of the carousel's slides
 
+  // needed purely to handle window resize from screen orientation changes
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
 
+    // attaches a listener to the window upon mount
     window.addEventListener("resize", handleResize);
 
     return () => {
+      // cleans up after itself
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -42,21 +47,21 @@ const LivePreview = () => {
           <br />
           Healthcare providers can quickly access appointment schedules, patient feedback, and consultation summaries—all in a single place, at their convenience.
         </p>
-        {/* Scrollable image container for mobile using Grid */}
+        {/* Scrollable image container for mobile using Grid - One slide at a time*/}
         {isMobile && (
           <div className="mt-2 overflow-hidden scale-[90%]">
             <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-              {images.map((img, index) => (
+              {images.map((img, index) => ( // renders all images in a row of divs, offset's div (translateX) to simulate scrolling of carousel
                 <img key={index} src={img} alt={`Preview ${index + 1}`} className="w-full max-w-[80%] object-cover flex-shrink-0 mx-[10%]" />
               ))}
             </div>
           </div>
         )}
 
-        {/* Image container for desktop */}
+        {/* Image container for desktop - all slides with active image being highlighted */}
         {!isMobile && (
           <div className="flex justify-center mt-2 gap-8 lg:py-10">
-            {images.map((img, index) => {
+            {images.map((img, index) => { //renders all the images, sets highest opacity and larger scale for the active slide
               const isMiddle = index === currentIndex;
               const isLeft = index === (currentIndex - 1 + images.length) % images.length;
               const isRight = index === (currentIndex + 1) % images.length;
@@ -89,7 +94,7 @@ const LivePreview = () => {
             </svg>
           </button>
 
-          {!isMobile && (
+          {isMobile && ( // renders dots to indicate current slide only on mobile (current slide is pretty obvious on desktop)
             <div className="flex items-center space-x-2">
               {images.map((_, index) => (
                 <span key={index} className={`w-2.5 h-2.5 rounded-full block ${index === currentIndex ? "bg-purple-600" : "bg-gray-300"}`}></span>

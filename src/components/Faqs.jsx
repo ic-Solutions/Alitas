@@ -66,7 +66,7 @@ const Faqs = () => {
           <b>Learn how we can make a difference — have a look at our FAQs now!</b>
         </p>
       </div>
-
+      {/* very simple collection of divs that applies open styling only to the div with the active index */}
       <div>
         {faqs.map((item, index) => (
           <div
@@ -82,6 +82,7 @@ const Faqs = () => {
               </span>
             </div>
             <div className={`px-4 text-sm sm:text-base overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-[100%] opacity-100 mt-1 pb-4" : "max-h-0 opacity-0 mt-0 pb-0"}`}>
+              {/* needs to be dangerously set to retain text formatting as defined in the string value itself */}
               <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
             </div>
           </div>

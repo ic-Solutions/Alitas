@@ -5,7 +5,7 @@ import { IconMenu2, IconKey, IconX } from "@tabler/icons-react";
 import { NavLink, useNavigate } from "react-router";
 
 const Navbar = ({ activeTab = "" }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // state to manage the mobile menu visibility
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -27,9 +27,7 @@ const Navbar = ({ activeTab = "" }) => {
           <span
             key={"#platform"}
             onClick={() => navigate("/#platform")}
-            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
-              activeTab === "#platform" ? "hover:text-stone-950 font-bold " : ""
-            }`}
+            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${activeTab === "#platform" ? "hover:text-stone-950 font-bold " : ""}`}
           >
             Platform
             {activeTab === "#platform" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
@@ -37,9 +35,7 @@ const Navbar = ({ activeTab = "" }) => {
           <NavLink
             key={"#solutions"}
             to="/#solutions"
-            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
-              activeTab === "#solutions" ? "hover:text-stone-950 font-bold " : ""
-            }`}
+            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${activeTab === "#solutions" ? "hover:text-stone-950 font-bold " : ""}`}
           >
             Solutions
             {activeTab === "#solutions" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
@@ -47,9 +43,7 @@ const Navbar = ({ activeTab = "" }) => {
           <NavLink
             key={"/about-us"}
             to="/about-us"
-            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
-              activeTab === "/about-us" ? "hover:text-stone-950 font-bold " : ""
-            }`}
+            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${activeTab === "/about-us" ? "hover:text-stone-950 font-bold " : ""}`}
           >
             About Us
             {activeTab === "/about-us" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
@@ -57,9 +51,7 @@ const Navbar = ({ activeTab = "" }) => {
           <NavLink
             key={"/contact-us"}
             to="/contact-us"
-            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${
-              activeTab === "/contact-us" ? "hover:text-stone-950 font-bold " : ""
-            }`}
+            className={`hover:text-gray-400 relative transition-colors duration-300 cursor-pointer ${activeTab === "/contact-us" ? "hover:text-stone-950 font-bold " : ""}`}
           >
             Contact Us
             {activeTab === "/contact-us" && <span className="absolute top-12 left-0 w-full h-1 bg-(--color-primary) rounded-t-full"></span>}
@@ -81,12 +73,13 @@ const Navbar = ({ activeTab = "" }) => {
               </div>
             </button>
           </div>
+          {/* toggle to show or hide menu, visible only on mobile */}
           <div className="md:hidden text-purple-500 text-2xl cursor-pointer rounded-full border border-purple-500 p-1" onClick={toggleMenu}>
             {menuOpen ? <IconX /> : <IconMenu2 />}
           </div>
         </div>
       </div>
-
+      {/* mobile menu hidden on Desktop along with the toggle to show or hide menu */}
       {menuOpen && (
         <div className="md:hidden mt-4 bg-white rounded-2xl shadow-md py-6 px-6 flex flex-col items-center space-y-4 w-[100%] mx-auto absolute left-0 z-10">
           <span
@@ -103,6 +96,7 @@ const Navbar = ({ activeTab = "" }) => {
             key={"#solutions"}
             to="/#solutions"
             onClick={() => {
+              // needed only here, for when solutions are navigated to from the homescreen itself (everywhere else triggers a rerender of components so menu is closed by default)
               setMenuOpen(false);
             }}
             className={`text-lg ${activeTab === "#solutions" ? "text-purple-500" : "text-gray-800"}`}

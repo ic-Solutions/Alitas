@@ -1,8 +1,10 @@
+// A custom input component wrapping the HTML input element, programmed to retain required styling
+// only used in the contact page so far
+
 function FormInput({ label, placeholder, value, setValue, index }) {
-    const updateValue = (v)=>{
-        console.log(index)
-        setValue({...value, [index]: v})
-    }
+  const updateValue = (v) => {
+    setValue({ ...value, [index]: v });
+  };
 
   return (
     <div className="flex flex-col">

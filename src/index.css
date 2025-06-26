@@ -6,6 +6,7 @@
     src: url('./fonts/SFPRODISPLAYREGULAR.OTF');
 }
 
+/* Tailwind Theme variable declaration */
 @theme{
     --font-DM Sans: DM Sans, sans-serif;
     --font-SF-Pro-Display: SF-Pro-Display, sans-serif;

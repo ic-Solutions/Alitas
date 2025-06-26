@@ -50,6 +50,7 @@ high-quality care.`,
   },
 ];
 
+// maintains a simple accordion, active index determines which element is open
 function WhatWeOffer() {
   const [activeIndex, setActiveIndex] = useState(null);
   const bob = {
@@ -67,14 +68,13 @@ function WhatWeOffer() {
       <div className="text-center px-4 lg:pb-24 pb-2">
         <h1 className="text-2xl px-4 lg:px-0 lg:text-5xl/16 font-bold leading-tight text-gray-900">What We Offer ?</h1>
         {/* <p className="text-sm/6 lg:text-lg/7 mt-6 text-gray-500">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          <br className="hidden sm:block" /> standard dummy text ever since the 1500s, when an
+          Hidden sub text as none was provided, add subtext and un-comment to use, or clear off
         </p> */}
       </div>
 
+      {/* responsive row of column directions */}
       <div className="flex flex-col md:flex-row justify-between items-start my-1 gap-14">
         {" "}
-        {/* Changed items-center to items-start */}
         {/* Accordion Section */}
         <div className="w-full lg:w-[45%] transition-all">
           {offeringsList.map((item, index) => {
@@ -86,9 +86,10 @@ function WhatWeOffer() {
                   {item.heading}
                   <IconChevronDown className={`h-6 w-6 text-gray-600 transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
                 </h3>
-                <div // Container for the content with max-height
+                <div // Container for the content with max-height (max-height needs to be solid value to trigger proper transition)
                   className={`overflow-hidden transition-all duration-500 ${isActive ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"}`}
                 >
+                  {/* needs to be dangerously set to retain text formatting as defined in the string value itself */}
                   <p className="lg:text-lg text-sm text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.body }}></p>
                 </div>
               </div>

@@ -9,9 +9,10 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // useEffect to manage event listener that controls visibility of Scroll to top button
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 10) {
+      if (window.pageYOffset > 10) { // Modify value (set to 10px rn) to control when button is visible. (0 is visible at all times) 
         setIsVisible(true);
       } else {
         setIsVisible(false);
