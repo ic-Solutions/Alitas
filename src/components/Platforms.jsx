@@ -1,4 +1,4 @@
-import deviceImage from "../assets/available.png";
+import deviceImage from "../assets/platforms/available.png";
 import phones from "../assets/platforms/phones.png";
 
 function Platforms() {

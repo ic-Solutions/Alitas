@@ -1,8 +1,7 @@
-import React from "react";
 import { MdEmail } from "react-icons/md";
-import { FaDiscord, FaYoutube, FaTiktok, FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaYoutube, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import icon from "../assets/icon.png";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -49,11 +48,21 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-5">Solutions</h3>
             <ul className="space-y-4">
-              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Healthcare")}>Healthcare</li>
-              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Immigration")}>Immigration</li>
-              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Tourism")}>Tourism</li>
-              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Finance")}>Finance</li>
-              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Manufacturing")}>Manufacturing</li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Healthcare")}>
+                Healthcare
+              </li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Immigration")}>
+                Immigration
+              </li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Tourism")}>
+                Tourism
+              </li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Finance")}>
+                Finance
+              </li>
+              <li className="w-[max-content] cursor-pointer hover:text-black" onClick={() => onClick("Manufacturing")}>
+                Manufacturing
+              </li>
             </ul>
           </div>
 

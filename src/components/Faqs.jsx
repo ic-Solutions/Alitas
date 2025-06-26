@@ -1,5 +1,4 @@
 import { IconPlus } from "@tabler/icons-react";
-import React from "react";
 import { useState } from "react";
 
 const faqs = [

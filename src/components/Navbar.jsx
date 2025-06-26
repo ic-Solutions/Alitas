@@ -1,5 +1,3 @@
-// src/components/Navbar.jsx
-
 import { useState } from "react";
 import icon from "../assets/icon.png";
 
@@ -7,7 +5,6 @@ import { IconMenu2, IconKey, IconX } from "@tabler/icons-react";
 import { NavLink, useNavigate } from "react-router";
 
 const Navbar = ({ activeTab = "" }) => {
-  // const [activeTab, setActiveTab] = useState("#home");
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);

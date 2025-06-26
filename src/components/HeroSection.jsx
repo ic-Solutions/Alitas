@@ -1,22 +1,15 @@
 import { useRef, useState } from "react";
 import Navbar from "./Navbar";
-import RotatingText from "../util/RotatingText";
 import { motion } from "motion/react";
 
-import HeroBackground from "../assets/hero_section_bg.png";
-import upcoming from "../assets/Hero assets/rtrt.png";
-import quickAccess from "../assets/Hero assets/quick_access_new.png";
-import language from "../assets/Hero assets/Languages.png";
-import mobileFeatures from "../assets/mobile features.png";
-import heroVideo from "../assets/Hero assets/Hero video.mp4";
-import MorphText from "../util/MorphText";
 
-const textItemss = [
-  "Enhancing Healthcare by Breaking Language Barriers",
-  "Mejorar la Salud Rompiendo Barreras de Idioma", //spanish
-  // "Améliorer la Santé en Brisant les Barrières Linguistiques", //french
-  "Zorg Verbeteren door Taalbarrières te Doorbreken", //dutch
-];
+import HeroBackground from "../assets/heroSection/hero_section_bg.png";
+import upcoming from "../assets/heroSection/rtrt.png";
+import quickAccess from "../assets/heroSection/quick_access_new.png";
+import language from "../assets/heroSection/Languages.png";
+import mobileFeatures from "../assets/heroSection/mobile features.png";
+import heroVideo from "../assets/heroSection/Hero video.mp4";
+import MorphText from "../util/MorphText";
 
 const textItems = [
   // "تعزيز الرعاية الصحية عن طريق كسر الحواجز اللغوية",
@@ -66,15 +59,8 @@ function HeroSection() {
             {" "}
             <p className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</p>
             <p className=" hidden lg:block">Enhancing Healthcare by Breaking Language Barriers</p>
-            {/*<p className="lg:whitespace-nowrap line-clamp-2 overflow-clip">
-              <RotatingText items={textItems} cursor={true} typingInterval={50} />
-            </p> */}
             <MorphText texts={textItems} />
           </h1>
-          {/* <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl/22 font-[700] font-[SF Pro Display] leading-tight text-[#1F1F1F] mb-6">
-            <span className="bg-gradient-to-r from-[#AA73D7] to-[#4A09C7] text-transparent bg-clip-text"> Alitas AI</span>– Enhancing Healthcare by
-            Breaking Language Barriers
-          </h1> */}
           <p className="lg:text-lg text-sm/6 lg:max-w-[80%] lg:mx-auto leading-[148%]">
             <b>Alitas AI</b> uses advanced technology to overcome language barriers that hinder patient care, reducing considerable wait times. Available 24/7, this innovative solution promotes
             effortless communication between healthcare providers and patients, regardless of language. By enhancing care quality and empowering patients, Alitas creates a more inclusive, and
